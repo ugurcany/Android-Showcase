@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="app_name" translatable="false">Android Architecture</string>
+
+    <string name="text_click_back_again">Click BACK again to exit!</string>
+
+    <string name="page_home">Home</string>
+    <string name="page_explore">Explore</string>
+    <string name="page_profile">Profile</string>
+
+</resources>

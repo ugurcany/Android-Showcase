@@ -1,0 +1,27 @@
+buildscript {
+    apply from: "config.gradle"
+
+    addRepos(repositories)
+
+    dependencies {
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.10'
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        //classpath 'com.google.gms:google-services:4.2.0'
+        //classpath 'io.fabric.tools:gradle:1.26.1'
+        //classpath 'com.google.firebase:firebase-plugins:1.1.5'
+    }
+}
+
+allprojects {
+    addRepos(repositories)
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task assembleAll {
+    dependsOn 'app:assembleDebug'
+    dependsOn 'app:assembleAdmin'
+    dependsOn 'app:assembleRelease'
+}

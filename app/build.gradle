@@ -1,0 +1,123 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'io.fabric'
+//apply plugin: 'com.google.firebase.firebase-perf'
+
+android {
+    compileSdkVersion sdk_versions.compile_sdk
+
+    defaultConfig {
+        applicationId app.id
+        versionCode app.version_code
+        versionName app.version_name
+
+        minSdkVersion sdk_versions.min_sdk
+        targetSdkVersion sdk_versions.target_sdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        release {
+            //LOAD KEYSTORE PROPS FROM FILE
+            def keystorePropertiesFile = file("keystore/keystore.properties")
+            def keystoreProperties = new Properties()
+            keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+    }
+
+    buildTypes {
+        /*admin {
+            debuggable true
+            minifyEnabled false
+            signingConfig signingConfigs.debug
+
+            applicationIdSuffix ".admin"
+        }*/
+        debug {
+            minifyEnabled false
+
+            applicationIdSuffix ".debug"
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    lintOptions {
+        disable 'GoogleAppIndexingWarning'
+    }
+}
+
+dependencies {
+    //ANDROIDX
+    implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'com.google.android.material:material:1.1.0-alpha01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    //ARCH
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.0.0'
+    //KOTLIN
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.3.10'
+    //DAGGER
+    implementation 'com.google.dagger:dagger:2.19'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.19'
+    implementation 'com.google.dagger:dagger-android:2.19'
+    implementation 'com.google.dagger:dagger-android-support:2.19'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.19'
+    //FIREBASE
+    /*implementation 'com.google.firebase:firebase-core:16.0.5'
+    implementation 'com.google.firebase:firebase-auth:16.0.5'
+    implementation 'com.google.android.gms:play-services-auth:16.0.1'
+    implementation 'com.google.firebase:firebase-firestore:17.1.3'
+    implementation 'com.google.firebase:firebase-ads:17.1.1'
+    implementation 'com.google.firebase:firebase-perf:16.2.1'
+    implementation 'com.crashlytics.sdk.android:crashlytics:2.9.6'*/
+    //RX
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.2'
+    //STATE
+    implementation 'com.evernote:android-state:1.4.1'
+    annotationProcessor 'com.evernote:android-state-processor:1.4.1'
+    //UI
+    implementation 'com.ncapdevi:frag-nav:3.0.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'jp.wasabeef:picasso-transformations:2.2.1'
+    implementation 'com.google.android:flexbox:1.1.0'
+    implementation 'com.github.Kennyc1012:MultiStateView:1.3.2'
+    implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+    //UTIL
+    implementation 'com.blankj:utilcode:1.22.1'
+    implementation 'com.google.code.gson:gson:2.8.5'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    //adminImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
+    //adminImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
+    //TEST
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test:rules:1.1.0'
+}
+
+//apply plugin: 'com.google.gms.google-services'

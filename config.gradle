@@ -1,0 +1,21 @@
+def app = [:]
+app.id = "com.accenture.androidarch"
+app.version_code = 1
+app.version_name = "1.0"
+ext.app = app
+
+def sdk_versions = [:]
+sdk_versions.min_sdk = 21
+sdk_versions.target_sdk = 28
+sdk_versions.compile_sdk = 28
+ext.sdk_versions = sdk_versions
+
+def static addRepos(RepositoryHandler handler) {
+    handler.mavenCentral()
+    handler.maven { url "https://jitpack.io" }
+    //handler.maven { url 'https://maven.fabric.io/public' }
+    handler.google()
+    handler.jcenter()
+}
+
+ext.addRepos = this.&addRepos
