@@ -1,47 +1,46 @@
-package com.accenture.androidarch.ui.main;
+package com.accenture.androidarch.ui.act_bottombar;
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.accenture.androidarch.R;
-import com.accenture.androidarch.databinding.ActivityMainBinding;
+import com.accenture.androidarch.databinding.ActivityBottombarBinding;
 import com.accenture.androidarch.ui.base.BaseActivity;
 
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 
-public class MainActivity extends BaseActivity<ActivityMainBinding> {
+public class BottomBarActivity extends BaseActivity<ActivityBottombarBinding> {
 
     @Inject
-    IMainNav mainNavController;
+    IBottomBarNav fragNavController;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mainNavController.init(savedInstanceState, getBinding().bottombar);
+        fragNavController.init(savedInstanceState, getBinding().bottombar);
     }
 
     @Override
     public int layoutRes() {
-        return R.layout.activity_main;
+        return R.layout.activity_bottombar;
     }
 
     @Override
-    public Toolbar toolbar() {
-        return getBinding().toolbar;
+    public boolean doubleClickToExitEnabled() {
+        return true;
     }
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        mainNavController.onSaveInstanceState(outState);
+        fragNavController.onSaveInstanceState(outState);
     }
 
     @Override
     public void onBackPressed() {
-        if (!mainNavController.onBackPressed()) {
+        if (!fragNavController.onBackPressed()) {
             super.onBackPressed();
         }
     }

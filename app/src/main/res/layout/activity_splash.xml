@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="@dimen/activity_padding"
-        tools:context=".ui.splash.SplashActivity">
+        tools:context=".ui.SplashActivity">
 
         <Space
             android:id="@+id/gap_start"

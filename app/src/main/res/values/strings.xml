@@ -2,10 +2,18 @@
 
     <string name="app_name" translatable="false">Android Architecture</string>
 
+    <string name="text_error">Error!</string>
     <string name="text_click_back_again">Click BACK again to exit!</string>
 
-    <string name="page_home">Home</string>
-    <string name="page_explore">Explore</string>
-    <string name="page_profile">Profile</string>
+    <!--MAIN-->
+    <string name="main_button_bottombar">BottomBar &amp; FragNav &amp; StateSaver</string>
+    <!--MAIN-->
+
+    <!--BOTTOMBAR-->
+    <string name="bottombar_page_x">Page #%1$d</string>
+    <string name="bottombar_page_1">Page 1</string>
+    <string name="bottombar_page_2">Page 2</string>
+    <string name="bottombar_page_3">Page 3</string>
+    <!--BOTTOMBAR-->
 
 </resources>

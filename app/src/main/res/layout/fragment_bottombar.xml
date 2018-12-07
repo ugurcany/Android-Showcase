@@ -4,6 +4,10 @@
     <data>
 
         <variable
+            name="pageName"
+            type="String" />
+
+        <variable
             name="count"
             type="Integer" />
 
@@ -20,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:gravity="center"
-            android:text="@string/page_home"
+            android:text='@{pageName, default="BB Page"}'
             android:textStyle="bold"
             app:autoSizeTextType="uniform"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +36,7 @@
             android:id="@+id/textview_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{String.valueOf(count)}"
+            android:text='@{String.valueOf(count), default="0"}'
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

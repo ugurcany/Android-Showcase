@@ -1,6 +1,6 @@
 package com.accenture.androidarch.di;
 
-import com.accenture.androidarch.ui.main.home.HomeViewModel;
+import com.accenture.androidarch.ui.act_bottombar.BottomBarViewModel;
 import com.accenture.androidarch.viewmodel.ViewModelFactory;
 
 import javax.inject.Singleton;
@@ -20,7 +20,7 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(HomeViewModel.class)
-    abstract ViewModel homeViewModel(HomeViewModel viewModel);
+    @ViewModelKey(BottomBarViewModel.class)
+    abstract ViewModel bottomBarViewModel(BottomBarViewModel viewModel);
 
 }

@@ -109,9 +109,7 @@ dependencies {
     implementation 'com.blankj:utilcode:1.22.1'
     implementation 'com.google.code.gson:gson:2.8.5'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
-    //adminImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
-    //adminImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
     //TEST
     testImplementation 'junit:junit:4.12'

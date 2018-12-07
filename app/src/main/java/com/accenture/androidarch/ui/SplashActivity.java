@@ -1,4 +1,4 @@
-package com.accenture.androidarch.ui.splash;
+package com.accenture.androidarch.ui;
 
 import android.os.Bundle;
 
@@ -6,12 +6,10 @@ import com.accenture.androidarch.R;
 import com.accenture.androidarch.common.Navigator;
 import com.accenture.androidarch.databinding.ActivitySplashBinding;
 import com.accenture.androidarch.ui.base.BaseActivity;
-import com.accenture.androidarch.ui.main.MainActivity;
 
 import java.util.concurrent.TimeUnit;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
@@ -32,8 +30,8 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
     }
 
     @Override
-    public Toolbar toolbar() {
-        return null;
+    public boolean doubleClickToExitEnabled() {
+        return false;
     }
 
     @Override

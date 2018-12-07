@@ -1,7 +1,8 @@
 package com.accenture.androidarch.di;
 
-import com.accenture.androidarch.ui.main.MainActivity;
-import com.accenture.androidarch.ui.splash.SplashActivity;
+import com.accenture.androidarch.ui.MainActivity;
+import com.accenture.androidarch.ui.act_bottombar.BottomBarActivity;
+import com.accenture.androidarch.ui.SplashActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -10,11 +11,16 @@ import dagger.android.ContributesAndroidInjector;
 abstract class ActivityModule {
 
     @ActivityScope
-    @ContributesAndroidInjector(modules = MainFragmentModule.class)
-    abstract MainActivity contributeMainActivity();
+    @ContributesAndroidInjector
+    abstract SplashActivity contributeSplashActivity();
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract SplashActivity contributeSplashActivity();
+    abstract MainActivity contributeMainActivity();
+
+    @ActivityScope
+    @ContributesAndroidInjector(modules = BottomBarFragmentModule.class)
+    abstract BottomBarActivity contributeBottomBarActivity();
+
 
 }

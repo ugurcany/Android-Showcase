@@ -1,4 +1,4 @@
-package com.accenture.androidarch.ui.main;
+package com.accenture.androidarch.ui.act_bottombar;
 
 import android.os.Bundle;
 
@@ -6,7 +6,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ncapdevi.fragnav.FragNavController;
 import com.ncapdevi.fragnav.FragNavSwitchController;
 
-public interface IMainNav extends FragNavController.RootFragmentListener,
+public interface IBottomBarNav extends FragNavController.RootFragmentListener,
         FragNavSwitchController,
         BottomNavigationView.OnNavigationItemSelectedListener,
         BottomNavigationView.OnNavigationItemReselectedListener {
@@ -16,9 +16,4 @@ public interface IMainNav extends FragNavController.RootFragmentListener,
     void onSaveInstanceState(Bundle outState);
 
     boolean onBackPressed();
-
-    void navigateToPlay();
-
-    void navigateBackToHome();
-
 }

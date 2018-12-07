@@ -9,7 +9,6 @@ import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ToastUtils;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 import dagger.android.support.DaggerAppCompatActivity;
@@ -23,7 +22,7 @@ public abstract class BaseActivity<V extends ViewDataBinding>
 
     public abstract int layoutRes();
 
-    public abstract Toolbar toolbar();
+    public abstract boolean doubleClickToExitEnabled();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -31,9 +30,6 @@ public abstract class BaseActivity<V extends ViewDataBinding>
         LogUtils.d("onCreate()", getClass().getSimpleName());
 
         binding = DataBindingUtil.setContentView(this, layoutRes());
-        if (toolbar() != null) {
-            setSupportActionBar(toolbar());
-        }
     }
 
     public V getBinding() {
@@ -63,7 +59,7 @@ public abstract class BaseActivity<V extends ViewDataBinding>
 
     @Override
     public void onBackPressed() {
-        if (backToExitClickedOnce) {
+        if (!doubleClickToExitEnabled() || backToExitClickedOnce) {
             ToastUtils.cancel();
             Navigator.finish(this);
             return;

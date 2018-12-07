@@ -1,4 +1,4 @@
-package com.accenture.androidarch.ui.main;
+package com.accenture.androidarch.ui.act_bottombar;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -6,9 +6,6 @@ import android.view.MenuItem;
 import com.accenture.androidarch.R;
 import com.accenture.androidarch.common.Navigator;
 import com.accenture.androidarch.di.ActivityScope;
-import com.accenture.androidarch.ui.main.explore.ExploreFragment;
-import com.accenture.androidarch.ui.main.home.HomeFragment;
-import com.accenture.androidarch.ui.main.profile.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ncapdevi.fragnav.FragNavController;
 import com.ncapdevi.fragnav.FragNavTransactionOptions;
@@ -23,15 +20,15 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 @ActivityScope
-public class MainNavController implements IMainNav {
+public class BottomBarNavController implements IBottomBarNav {
 
     private final FragNavController fragNavController;
     private BottomNavigationView bottomBar;
 
     @Inject
-    MainNavController(MainActivity mainActivity) {
+    BottomBarNavController(BottomBarActivity bottomBarActivity) {
         fragNavController = new FragNavController(
-                mainActivity.getSupportFragmentManager(),
+                bottomBarActivity.getSupportFragmentManager(),
                 R.id.container_fragment);
         fragNavController.setNavigationStrategy(
                 new UniqueTabHistoryStrategy(this));
@@ -75,11 +72,11 @@ public class MainNavController implements IMainNav {
     public Fragment getRootFragment(int i) {
         switch (i) {
             case FragNavController.TAB1:
-                return HomeFragment.initialize();
+                return BottomBarFragment.initialize(i);
             case FragNavController.TAB2:
-                return ExploreFragment.initialize();
+                return BottomBarFragment.initialize(i);
             case FragNavController.TAB3:
-                return ProfileFragment.initialize();
+                return BottomBarFragment.initialize(i);
         }
         throw new IllegalStateException("No tab found for index:" + i);
     }
@@ -111,18 +108,6 @@ public class MainNavController implements IMainNav {
         if (fragNavController.getCurrentStack() != null
                 && fragNavController.getCurrentStack().size() > 1) {
             fragNavController.clearStack();
-        }
-    }
-
-    @Override
-    public void navigateToPlay() {
-        //fragNavController.pushFragment(new PlayFragment());
-    }
-
-    @Override
-    public void navigateBackToHome() {
-        while (!fragNavController.isRootFragment()) {
-            fragNavController.popFragment();
         }
     }
 }
