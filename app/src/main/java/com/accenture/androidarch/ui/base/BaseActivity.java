@@ -41,7 +41,6 @@ public abstract class BaseActivity<V extends ViewDataBinding>
         super.onDestroy();
         LogUtils.d("onDestroy()", getClass().getSimpleName());
 
-        setSupportActionBar(null);
         binding.unbind();
     }
 
