@@ -1,7 +1,7 @@
 package com.accenture.androidshowcase.di;
 
-import com.accenture.androidshowcase.service.IService;
-import com.accenture.androidshowcase.service.Service;
+import com.accenture.androidshowcase.service.movie.IMovieService;
+import com.accenture.androidshowcase.service.movie.MovieService;
 
 import javax.inject.Singleton;
 
@@ -13,6 +13,6 @@ abstract class ServiceModule {
 
     @Binds
     @Singleton
-    abstract IService service(Service service);
+    abstract IMovieService restService(MovieService service);
 
 }

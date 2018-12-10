@@ -1,14 +1,18 @@
 package com.accenture.androidshowcase.ui.act_rest.frag;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
+import android.widget.TextView;
 
 import com.accenture.androidshowcase.R;
 import com.accenture.androidshowcase.databinding.FragmentRestBinding;
 import com.accenture.androidshowcase.ui.base.BaseFragment;
 import com.blankj.utilcode.util.KeyboardUtils;
+import com.blankj.utilcode.util.ToastUtils;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,7 +31,16 @@ public class RestFragment
                              @Nullable Bundle savedInstanceState) {
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
 
-        KeyboardUtils.hideSoftInput(getActivity());
+        KeyboardUtils.hideSoftInput(rootView);
+
+        getBinding().edittextSearch.setOnEditorActionListener(
+                (TextView v, int actionId, KeyEvent event) -> {
+                    if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                        String searchText = v.getText().toString().trim();
+                        ToastUtils.showShort(searchText);
+                    }
+                    return false;
+                });
 
         return rootView;
     }

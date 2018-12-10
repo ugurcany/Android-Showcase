@@ -101,7 +101,9 @@ dependencies {
     implementation 'com.evernote:android-state:1.4.1'
     annotationProcessor 'com.evernote:android-state-processor:1.4.1'
     //RETROFIT
-    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation "com.squareup.retrofit2:retrofit:$dep_versions.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$dep_versions.retrofit"
+    implementation "com.squareup.retrofit2:adapter-rxjava:$dep_versions.retrofit"
     //UI
     implementation 'com.ncapdevi:frag-nav:3.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
