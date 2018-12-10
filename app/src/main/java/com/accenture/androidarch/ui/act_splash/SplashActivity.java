@@ -1,10 +1,11 @@
-package com.accenture.androidarch.ui;
+package com.accenture.androidarch.ui.act_splash;
 
 import android.os.Bundle;
 
 import com.accenture.androidarch.R;
 import com.accenture.androidarch.common.Navigator;
 import com.accenture.androidarch.databinding.ActivitySplashBinding;
+import com.accenture.androidarch.ui.act_main.MainActivity;
 import com.accenture.androidarch.ui.base.BaseActivity;
 
 import java.util.concurrent.TimeUnit;

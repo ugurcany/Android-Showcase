@@ -1,6 +1,6 @@
 package com.accenture.androidarch.di;
 
-import com.accenture.androidarch.ui.act_bottombar.BottomBarViewModel;
+import com.accenture.androidarch.ui.act_bottombar.frag.BottomBarViewModel;
 import com.accenture.androidarch.viewmodel.ViewModelFactory;
 
 import javax.inject.Singleton;

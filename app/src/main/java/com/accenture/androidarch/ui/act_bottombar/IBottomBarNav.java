@@ -16,4 +16,6 @@ public interface IBottomBarNav extends FragNavController.RootFragmentListener,
     void onSaveInstanceState(Bundle outState);
 
     boolean onBackPressed();
+
+    void pushFragment(int pageId, int pageInCurrentStackId);
 }

@@ -1,4 +1,4 @@
-package com.accenture.androidarch.ui;
+package com.accenture.androidarch.ui.act_main;
 
 import android.os.Bundle;
 

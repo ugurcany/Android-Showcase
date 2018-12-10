@@ -10,10 +10,11 @@
     <!--MAIN-->
 
     <!--BOTTOMBAR-->
-    <string name="bottombar_page_x">Page #%1$d</string>
+    <string name="bottombar_page_x">Page #%1$d-%2$d</string>
     <string name="bottombar_page_1">Page 1</string>
     <string name="bottombar_page_2">Page 2</string>
     <string name="bottombar_page_3">Page 3</string>
+    <string name="bottombar_button_new_page">New Page</string>
     <!--BOTTOMBAR-->
 
 </resources>

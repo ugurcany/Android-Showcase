@@ -1,4 +1,4 @@
-package com.accenture.androidarch.ui.act_bottombar;
+package com.accenture.androidarch.ui.act_bottombar.frag;
 
 import com.accenture.androidarch.service.IService;
 import com.accenture.androidarch.ui.base.BaseViewModel;

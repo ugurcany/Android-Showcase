@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import com.accenture.androidarch.R;
 import com.accenture.androidarch.common.Navigator;
 import com.accenture.androidarch.di.ActivityScope;
+import com.accenture.androidarch.ui.act_bottombar.frag.BottomBarFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ncapdevi.fragnav.FragNavController;
 import com.ncapdevi.fragnav.FragNavTransactionOptions;
@@ -72,11 +73,11 @@ public class BottomBarNavController implements IBottomBarNav {
     public Fragment getRootFragment(int i) {
         switch (i) {
             case FragNavController.TAB1:
-                return BottomBarFragment.initialize(i);
+                return BottomBarFragment.initialize(i + 1, 1);
             case FragNavController.TAB2:
-                return BottomBarFragment.initialize(i);
+                return BottomBarFragment.initialize(i + 1, 1);
             case FragNavController.TAB3:
-                return BottomBarFragment.initialize(i);
+                return BottomBarFragment.initialize(i + 1, 1);
         }
         throw new IllegalStateException("No tab found for index:" + i);
     }
@@ -109,5 +110,11 @@ public class BottomBarNavController implements IBottomBarNav {
                 && fragNavController.getCurrentStack().size() > 1) {
             fragNavController.clearStack();
         }
+    }
+
+    @Override
+    public void pushFragment(int pageId, int pageInCurrentStackId) {
+        fragNavController.pushFragment(
+                BottomBarFragment.initialize(pageId, pageInCurrentStackId));
     }
 }

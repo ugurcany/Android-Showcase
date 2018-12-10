@@ -70,4 +70,10 @@ public abstract class BaseActivity<V extends ViewDataBinding>
         new Handler().postDelayed(() -> backToExitClickedOnce = false,
                 2000);
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 }

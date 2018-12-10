@@ -1,6 +1,6 @@
 package com.accenture.androidarch.di;
 
-import com.accenture.androidarch.ui.act_bottombar.BottomBarFragment;
+import com.accenture.androidarch.ui.act_bottombar.frag.BottomBarFragment;
 import com.accenture.androidarch.ui.act_bottombar.BottomBarNavController;
 import com.accenture.androidarch.ui.act_bottombar.IBottomBarNav;
 

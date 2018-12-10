@@ -1,6 +1,5 @@
 package com.accenture.androidarch.ui.act_bottombar;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.accenture.androidarch.R;
@@ -43,10 +42,5 @@ public class BottomBarActivity extends BaseActivity<ActivityBottombarBinding> {
         if (!fragNavController.onBackPressed()) {
             super.onBackPressed();
         }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
     }
 }
