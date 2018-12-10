@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout>
 
+    <data>
+
+        <variable
+            name="errorMsg"
+            type="String" />
+
+    </data>
+
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -9,11 +17,12 @@
         android:padding="@dimen/activity_padding">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:id="@+id/textview_message"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
-            android:text="@string/text_error"
+            android:text='@{errorMsg, default=@string/text_error}'
             android:textSize="20sp" />
 
     </FrameLayout>

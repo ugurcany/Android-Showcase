@@ -9,16 +9,20 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.TextView;
 
 import com.accenture.androidshowcase.R;
+import com.accenture.androidshowcase.data.MovieResults;
 import com.accenture.androidshowcase.databinding.FragmentRestBinding;
 import com.accenture.androidshowcase.ui.base.BaseFragment;
 import com.blankj.utilcode.util.KeyboardUtils;
-import com.blankj.utilcode.util.ToastUtils;
+import com.kennyc.view.MultiStateView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class RestFragment
         extends BaseFragment<FragmentRestBinding, RestViewModel> {
+
+    private ResultsAdapter resultsAdapter;
 
     public static RestFragment initialize() {
         RestFragment fragment = new RestFragment();
@@ -33,14 +37,21 @@ public class RestFragment
 
         KeyboardUtils.hideSoftInput(rootView);
 
+        getBinding().recyclerviewResults.setLayoutManager(
+                new LinearLayoutManager(getContext()));
+        getBinding().recyclerviewResults.setAdapter(
+                resultsAdapter = new ResultsAdapter());
+
         getBinding().edittextSearch.setOnEditorActionListener(
                 (TextView v, int actionId, KeyEvent event) -> {
                     if (actionId == EditorInfo.IME_ACTION_SEARCH) {
                         String searchText = v.getText().toString().trim();
-                        ToastUtils.showShort(searchText);
+                        getViewModel().searchMovie(searchText);
                     }
                     return false;
                 });
+
+        observeResults();
 
         return rootView;
     }
@@ -55,4 +66,20 @@ public class RestFragment
         return RestViewModel.class;
     }
 
+    private void observeResults() {
+        observe(getViewModel().getResults(), (MovieResults movieResults) -> {
+            if (movieResults != null) {
+                resultsAdapter.setNewData(movieResults.getResults());
+
+                ((TextView) getBinding().multistateview.getView(MultiStateView.VIEW_STATE_ERROR)
+                        .findViewById(R.id.textview_message)).setText(movieResults.getErrorMsg());
+            }
+        });
+
+        observe(getViewModel().getResultsState(), (ResultsState resultsState) -> {
+            if (resultsState != null) {
+                resultsState.decorate(getBinding());
+            }
+        });
+    }
 }

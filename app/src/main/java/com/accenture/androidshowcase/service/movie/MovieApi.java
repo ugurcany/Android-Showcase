@@ -8,7 +8,7 @@ import retrofit2.http.Query;
 
 public interface MovieApi {
 
-    @GET("")
+    @GET("/")
     Observable<MovieResults> search(@Query("apikey") String apiKey,
                                     @Query("s") String searchText);
 

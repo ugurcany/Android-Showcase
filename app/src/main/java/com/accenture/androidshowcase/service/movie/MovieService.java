@@ -1,16 +1,14 @@
 package com.accenture.androidshowcase.service.movie;
 
-import android.content.Context;
-
 import com.accenture.androidshowcase.data.MovieResults;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import io.reactivex.Observable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 @Singleton
 public class MovieService implements IMovieService {
@@ -20,10 +18,8 @@ public class MovieService implements IMovieService {
     private MovieApi api;
 
     @Inject
-    MovieService(Context context) {
-        api = new Retrofit.Builder()
-                .addConverterFactory(GsonConverterFactory.create())
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+    MovieService(Retrofit.Builder retrofitBuilder) {
+        api = retrofitBuilder
                 .baseUrl("http://www.omdbapi.com/")
                 .build()
                 .create(MovieApi.class);
@@ -31,6 +27,8 @@ public class MovieService implements IMovieService {
 
     @Override
     public Observable<MovieResults> search(String searchText) {
-        return api.search(API_KEY, searchText);
+        return api.search(API_KEY, searchText)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
     }
 }
