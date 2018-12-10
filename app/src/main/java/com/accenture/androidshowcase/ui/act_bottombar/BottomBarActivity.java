@@ -22,6 +22,12 @@ public class BottomBarActivity extends BaseActivity<ActivityBottombarBinding> {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        fragNavController.clear();
+    }
+
+    @Override
     public int layoutRes() {
         return R.layout.activity_bottombar;
     }

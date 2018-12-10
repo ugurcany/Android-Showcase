@@ -23,7 +23,7 @@ import androidx.fragment.app.Fragment;
 @ActivityScope
 public class BottomBarNavController implements IBottomBarNav {
 
-    private final FragNavController fragNavController;
+    private FragNavController fragNavController;
     private BottomNavigationView bottomBar;
 
     @Inject
@@ -43,12 +43,18 @@ public class BottomBarNavController implements IBottomBarNav {
 
     @Override
     public void init(Bundle savedInstanceState, BottomNavigationView bottomBar) {
-        this.bottomBar = bottomBar;
         bottomBar.setSelectedItemId(R.id.action_home);
         bottomBar.setOnNavigationItemSelectedListener(this);
         bottomBar.setOnNavigationItemReselectedListener(this);
+        this.bottomBar = bottomBar;
 
         fragNavController.initialize(FragNavController.TAB1, savedInstanceState);
+    }
+
+    @Override
+    public void clear() {
+        fragNavController = null;
+        bottomBar = null;
     }
 
     @Override
@@ -113,8 +119,8 @@ public class BottomBarNavController implements IBottomBarNav {
     }
 
     @Override
-    public void pushFragment(int pageId, int pageInCurrentStackId) {
+    public void pushFragment(int pageId, int pageInCurrentTabId) {
         fragNavController.pushFragment(
-                BottomBarFragment.initialize(pageId, pageInCurrentStackId));
+                BottomBarFragment.initialize(pageId, pageInCurrentTabId));
     }
 }

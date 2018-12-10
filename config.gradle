@@ -14,6 +14,7 @@ def dep_versions = [:]
 dep_versions.gradle = "3.2.1"
 dep_versions.kotlin = "1.3.11"
 dep_versions.dagger = "2.19"
+dep_versions.leakcanary = "1.6.2"
 ext.dep_versions = dep_versions
 
 def static addRepos(RepositoryHandler handler) {

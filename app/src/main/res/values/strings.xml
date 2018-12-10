@@ -3,10 +3,12 @@
     <string name="app_name" translatable="false">Android Showcase</string>
 
     <string name="text_error">Error!</string>
+    <string name="text_do_sth">Do something!</string>
     <string name="text_click_back_again">Click BACK again to exit!</string>
 
     <!--MAIN-->
     <string name="main_button_bottombar">BottomBar &amp; FragNav &amp; StateSaver</string>
+    <string name="main_button_rest">REST &amp; BRVAH &amp; MultiState</string>
     <!--MAIN-->
 
     <!--BOTTOMBAR-->

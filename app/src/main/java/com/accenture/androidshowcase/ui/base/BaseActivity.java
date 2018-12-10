@@ -42,6 +42,7 @@ public abstract class BaseActivity<V extends ViewDataBinding>
         LogUtils.d("onDestroy()", getClass().getSimpleName());
 
         binding.unbind();
+        binding = null;
     }
 
     @Override

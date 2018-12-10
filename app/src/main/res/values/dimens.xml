@@ -2,6 +2,5 @@
 <resources>
 
     <dimen name="activity_padding">16dp</dimen>
-    <dimen name="elevation">4dp</dimen>
 
 </resources>

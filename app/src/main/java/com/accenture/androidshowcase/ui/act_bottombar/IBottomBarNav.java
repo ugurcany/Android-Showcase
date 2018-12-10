@@ -13,9 +13,11 @@ public interface IBottomBarNav extends FragNavController.RootFragmentListener,
 
     void init(Bundle savedInstanceState, BottomNavigationView bottomBar);
 
+    void clear();
+
     void onSaveInstanceState(Bundle outState);
 
     boolean onBackPressed();
 
-    void pushFragment(int pageId, int pageInCurrentStackId);
+    void pushFragment(int pageId, int pageInCurrentTabId);
 }

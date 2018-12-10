@@ -8,12 +8,13 @@
         android:layout_height="match_parent"
         android:padding="@dimen/activity_padding">
 
-        <com.github.ybq.android.spinkit.SpinKitView
-            style="@style/SpinKitView.FadingCircle"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:SpinKit_Color="@color/colorPrimary" />
+            android:gravity="center"
+            android:text="@string/text_do_sth"
+            android:textSize="20sp" />
 
     </FrameLayout>
 

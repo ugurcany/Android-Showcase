@@ -76,6 +76,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, M extends BaseView
         stopObservingData();
         getLifecycle().removeObserver(viewModel);
         binding.unbind();
+        binding = null;
     }
 
     private void stopObservingData() {
@@ -85,6 +86,7 @@ public abstract class BaseFragment<V extends ViewDataBinding, M extends BaseView
             liveData.removeObservers(this);
             iterator.remove();
         }
+        observedDataList = null;
     }
 
     @Override

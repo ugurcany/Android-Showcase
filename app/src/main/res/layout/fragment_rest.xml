@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/activity_padding">
+
+        <EditText
+            android:id="@+id/edittext_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/multistateview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.kennyc.view.MultiStateView
+            android:id="@+id/multistateview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edittext_search"
+            app:layout_constraintVertical_weight="1"
+            app:msv_emptyView="@layout/view_empty"
+            app:msv_errorView="@layout/view_error"
+            app:msv_loadingView="@layout/view_loading"
+            app:msv_viewState="empty">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_results"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </com.kennyc.view.MultiStateView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

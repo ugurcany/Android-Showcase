@@ -25,14 +25,14 @@ public class BottomBarFragment
     @State
     int pageId;
     @State
-    int pageInCurrentStackId;
+    int pageInCurrentTabId;
     @State
     int count;
 
-    public static BottomBarFragment initialize(int pageId, int pageInCurrentStackId) {
+    public static BottomBarFragment initialize(int pageId, int pageInCurrentTabId) {
         BottomBarFragment fragment = new BottomBarFragment();
         fragment.pageId = pageId;
-        fragment.pageInCurrentStackId = pageInCurrentStackId;
+        fragment.pageInCurrentTabId = pageInCurrentTabId;
         fragment.count = 0;
         return fragment;
     }
@@ -44,12 +44,12 @@ public class BottomBarFragment
         View rootView = super.onCreateView(inflater, container, savedInstanceState);
 
         getBinding().setPageName(getString(R.string.bottombar_page_x,
-                pageId, pageInCurrentStackId));
+                pageId, pageInCurrentTabId));
         getBinding().setCount(count);
 
         getBinding().fab.setOnClickListener((v) -> getBinding().setCount(++count));
         getBinding().buttonNewPage.setOnClickListener((v) -> bottomBarNavController.pushFragment(
-                pageId, pageInCurrentStackId + 1));
+                pageId, pageInCurrentTabId + 1));
 
         return rootView;
     }

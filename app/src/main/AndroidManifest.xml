@@ -31,6 +31,13 @@
 
         <activity
             android:name=".ui.act_bottombar.BottomBarActivity"
+            android:label="@string/main_button_bottombar"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.MainActivity" />
+
+        <activity
+            android:name=".ui.act_rest.RestActivity"
+            android:label="@string/main_button_rest"
             android:launchMode="singleTop"
             android:parentActivityName=".ui.MainActivity" />
 
