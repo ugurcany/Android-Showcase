@@ -4,11 +4,9 @@ buildscript {
     addRepos(repositories)
 
     dependencies {
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.10'
-        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "com.android.tools.build:gradle:$dep_versions.gradle"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$dep_versions.kotlin"
         //classpath 'com.google.gms:google-services:4.2.0'
-        //classpath 'io.fabric.tools:gradle:1.26.1'
-        //classpath 'com.google.firebase:firebase-plugins:1.1.5'
     }
 }
 

@@ -1,8 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-//apply plugin: 'io.fabric'
-//apply plugin: 'com.google.firebase.firebase-perf'
 
 android {
     compileSdkVersion sdk_versions.compile_sdk
@@ -77,13 +75,13 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-common-java8:2.0.0'
     //KOTLIN
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.3.10'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$dep_versions.kotlin"
     //DAGGER
-    implementation 'com.google.dagger:dagger:2.19'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.19'
-    implementation 'com.google.dagger:dagger-android:2.19'
-    implementation 'com.google.dagger:dagger-android-support:2.19'
-    annotationProcessor 'com.google.dagger:dagger-android-processor:2.19'
+    implementation "com.google.dagger:dagger:$dep_versions.dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$dep_versions.dagger"
+    implementation "com.google.dagger:dagger-android:$dep_versions.dagger"
+    implementation "com.google.dagger:dagger-android-support:$dep_versions.dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$dep_versions.dagger"
     //FIREBASE
     /*implementation 'com.google.firebase:firebase-core:16.0.5'
     implementation 'com.google.firebase:firebase-auth:16.0.5'
@@ -98,6 +96,8 @@ dependencies {
     //STATE
     implementation 'com.evernote:android-state:1.4.1'
     annotationProcessor 'com.evernote:android-state-processor:1.4.1'
+    //RETROFIT
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     //UI
     implementation 'com.ncapdevi:frag-nav:3.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'

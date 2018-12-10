@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name" translatable="false">Android Architecture</string>
+    <string name="app_name" translatable="false">Android Showcase</string>
 
     <string name="text_error">Error!</string>
     <string name="text_click_back_again">Click BACK again to exit!</string>

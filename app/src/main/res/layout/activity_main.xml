@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:clipToPadding="false"
         android:padding="@dimen/activity_padding"
-        tools:context=".ui.act_main.MainActivity">
+        tools:context=".ui.MainActivity">
 
         <LinearLayout
             android:layout_width="match_parent"

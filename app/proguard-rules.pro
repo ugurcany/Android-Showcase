@@ -22,12 +22,12 @@
 ##########
 # Maintain all attributes - To avoid having to add each in several different places below
 ##########
--keepattributes Exceptions,InnerClasses,Signature,Deprecated, SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
+-keepattributes Exceptions,InnerClasses,Signature,Deprecated,SourceFile,LineNumberTable,*Annotation*,EnclosingMethod
 
 ##########
 # Data models
 ##########
--keepclassmembers class mobi.mergen.moviemoji.data.** { *; }
+-keepclassmembers class com.accenture.androidshowcase.data.** { *; }
 
 ##########
 # Android
@@ -170,6 +170,11 @@
 -keepclassmembers class * {
     @android.arch.lifecycle.OnLifecycleEvent *;
 }
+
+#############
+# Retrofit
+#############
+-dontnote okio.**
 
 #############
 # HttpClient Legacy (Ignore) - org.apache.http legacy

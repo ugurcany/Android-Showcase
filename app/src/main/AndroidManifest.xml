@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.accenture.androidarch">
+    package="com.accenture.androidshowcase">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
 
         <activity
-            android:name=".ui.act_splash.SplashActivity"
+            android:name=".ui.SplashActivity"
             android:launchMode="singleTop"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -26,13 +26,13 @@
         </activity>
 
         <activity
-            android:name=".ui.act_main.MainActivity"
+            android:name=".ui.MainActivity"
             android:launchMode="singleTop" />
 
         <activity
             android:name=".ui.act_bottombar.BottomBarActivity"
             android:launchMode="singleTop"
-            android:parentActivityName=".ui.act_main.MainActivity" />
+            android:parentActivityName=".ui.MainActivity" />
 
     </application>
 
