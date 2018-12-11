@@ -3,6 +3,10 @@
 
     <data>
 
+        <variable
+            name="data"
+            type="com.accenture.androidshowcase.data.MovieResults" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -12,16 +16,17 @@
         android:layout_height="match_parent"
         android:layout_margin="@dimen/activity_padding">
 
-        <EditText
-            android:id="@+id/edittext_search"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:imeOptions="actionSearch"
-            android:inputType="text"
+            android:layout_marginBottom="10dp"
+            app:iconifiedByDefault="false"
             app:layout_constraintBottom_toTopOf="@+id/multistateview"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:queryHint="@string/moviesearch_hint" />
 
         <com.kennyc.view.MultiStateView
             android:id="@+id/multistateview"
@@ -30,10 +35,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edittext_search"
+            app:layout_constraintTop_toBottomOf="@+id/searchview"
             app:layout_constraintVertical_weight="1"
-            app:msv_emptyView="@layout/view_empty"
-            app:msv_errorView="@layout/view_error"
+            app:msv_emptyView="@layout/view_empty_results"
+            app:msv_errorView="@layout/view_error_results"
             app:msv_loadingView="@layout/view_loading"
             app:msv_viewState="empty">
 

@@ -6,7 +6,7 @@ import com.accenture.androidshowcase.R;
 import com.accenture.androidshowcase.common.Navigator;
 import com.accenture.androidshowcase.databinding.ActivityMainBinding;
 import com.accenture.androidshowcase.ui.act_bottombar.BottomBarActivity;
-import com.accenture.androidshowcase.ui.act_rest.RestActivity;
+import com.accenture.androidshowcase.ui.act_moviesearch.MovieSearchActivity;
 import com.accenture.androidshowcase.ui.base.BaseActivity;
 
 import androidx.annotation.Nullable;
@@ -17,10 +17,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        getBinding().buttonBottombar.setOnClickListener(v ->
+        getBinding().cardviewBottombar.setOnClickListener(v ->
                 Navigator.start(this, BottomBarActivity.class));
-        getBinding().buttonRest.setOnClickListener(v ->
-                Navigator.start(this, RestActivity.class));
+        getBinding().cardviewMoviesearch.setOnClickListener(v ->
+                Navigator.start(this, MovieSearchActivity.class));
     }
 
     @Override

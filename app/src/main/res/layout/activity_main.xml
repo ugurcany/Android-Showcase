@@ -15,17 +15,69 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button_bottombar"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardview_bottombar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/main_button_bottombar" />
+                android:clickable="true"
+                android:focusable="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
 
-            <Button
-                android:id="@+id/button_rest"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/main_title_bottombar"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/main_desc_bottombar"
+                        android:textColor="@color/colorDarkSecondary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardview_moviesearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/main_button_rest" />
+                android:clickable="true"
+                android:focusable="true"
+                app:cardUseCompatPadding="true"
+                app:contentPadding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/main_title_moviesearch"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/main_desc_moviesearch"
+                        android:textColor="@color/colorDarkSecondary"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
 

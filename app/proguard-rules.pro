@@ -113,6 +113,11 @@
 }
 
 #############
+# BottomBar (Needed to call methods via reflection to customize it)
+#############
+-keep class android.support.design.internal.** { *; }
+
+#############
 # WebViews
 #############
 # If your project uses WebView with JS, uncomment the following

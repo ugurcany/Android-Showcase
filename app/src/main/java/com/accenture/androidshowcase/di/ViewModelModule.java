@@ -1,7 +1,7 @@
 package com.accenture.androidshowcase.di;
 
 import com.accenture.androidshowcase.ui.act_bottombar.frag.BottomBarViewModel;
-import com.accenture.androidshowcase.ui.act_rest.frag.RestViewModel;
+import com.accenture.androidshowcase.ui.act_moviesearch.frag.MovieSearchViewModel;
 import com.accenture.androidshowcase.viewmodel.ViewModelFactory;
 
 import javax.inject.Singleton;
@@ -26,7 +26,7 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(RestViewModel.class)
-    abstract ViewModel restViewModel(RestViewModel viewModel);
+    @ViewModelKey(MovieSearchViewModel.class)
+    abstract ViewModel movieSearchViewModel(MovieSearchViewModel viewModel);
 
 }

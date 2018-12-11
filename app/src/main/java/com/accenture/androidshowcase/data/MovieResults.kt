@@ -3,7 +3,7 @@ package com.accenture.androidshowcase.data
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-data class MovieResults(@SerializedName("Search") var results: List<Movie>?,
+data class MovieResults(@SerializedName("Search") var movies: List<Movie>?,
                         @SerializedName("Error") var errorMsg: String?,
                         @SerializedName("Response") var response: String) : Serializable {
 

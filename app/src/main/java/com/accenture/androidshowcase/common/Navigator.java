@@ -49,7 +49,7 @@ public class Navigator {
         }
     }
 
-    private static void goToWebPage(String url) {
+    public static void goToWebPage(String url) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         ActivityUtils.startActivity(intent);
     }

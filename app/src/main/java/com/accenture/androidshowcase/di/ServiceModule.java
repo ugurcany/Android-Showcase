@@ -13,6 +13,6 @@ abstract class ServiceModule {
 
     @Binds
     @Singleton
-    abstract IMovieService restService(MovieService service);
+    abstract IMovieService movieService(MovieService service);
 
 }
