@@ -1,10 +1,11 @@
-package com.accenture.androidshowcase.ui;
+package com.accenture.androidshowcase.ui.act_splash;
 
 import android.os.Bundle;
 
 import com.accenture.androidshowcase.R;
 import com.accenture.androidshowcase.common.Navigator;
 import com.accenture.androidshowcase.databinding.ActivitySplashBinding;
+import com.accenture.androidshowcase.ui.act_main.MainActivity;
 import com.accenture.androidshowcase.ui.base.BaseActivity;
 
 import java.util.concurrent.TimeUnit;

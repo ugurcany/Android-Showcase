@@ -24,7 +24,7 @@
             android:id="@+id/button_new_page"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/bottombar_button_new_page"
+            android:text="@string/multicounter_button_new_page"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,10 +56,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add"
-            app:backgroundTint="@color/colorAccent"
+            app:backgroundTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:tint="@color/colorPrimary"
+            app:tint="@color/colorLight"
             app:useCompatPadding="true" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

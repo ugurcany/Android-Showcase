@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".ui.act_bottombar.BottomBarActivity">
+        tools:context=".ui.act_multicounter.MultiCounterActivity">
 
         <FrameLayout
             android:id="@+id/container_fragment"
@@ -22,7 +22,7 @@
             app:itemBackground="@color/colorPrimary"
             app:itemIconTint="@color/selector_bottombar"
             app:itemTextColor="@color/selector_bottombar"
-            app:menu="@menu/menu_bottombar" />
+            app:menu="@menu/menu_multi_counter" />
 
     </LinearLayout>
 

@@ -5,18 +5,18 @@
         android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/ic_android"
-        android:title="@string/bottombar_page_1"
+        android:title="@string/multicounter_page_1"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_explore"
         android:enabled="true"
         android:icon="@drawable/ic_android"
-        android:title="@string/bottombar_page_2"
+        android:title="@string/multicounter_page_2"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_profile"
         android:enabled="true"
         android:icon="@drawable/ic_android"
-        android:title="@string/bottombar_page_3"
+        android:title="@string/multicounter_page_3"
         app:showAsAction="ifRoom" />
 </menu>

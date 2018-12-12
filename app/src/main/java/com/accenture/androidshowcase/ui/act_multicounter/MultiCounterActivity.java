@@ -1,19 +1,19 @@
-package com.accenture.androidshowcase.ui.act_bottombar;
+package com.accenture.androidshowcase.ui.act_multicounter;
 
 import android.os.Bundle;
 
 import com.accenture.androidshowcase.R;
-import com.accenture.androidshowcase.databinding.ActivityBottombarBinding;
+import com.accenture.androidshowcase.databinding.ActivityMultiCounterBinding;
 import com.accenture.androidshowcase.ui.base.BaseActivity;
 
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
 
-public class BottomBarActivity extends BaseActivity<ActivityBottombarBinding> {
+public class MultiCounterActivity extends BaseActivity<ActivityMultiCounterBinding> {
 
     @Inject
-    IBottomBarNav fragNavController;
+    IMultiCounterNav fragNavController;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class BottomBarActivity extends BaseActivity<ActivityBottombarBinding> {
 
     @Override
     public int layoutRes() {
-        return R.layout.activity_bottombar;
+        return R.layout.activity_multi_counter;
     }
 
     @Override

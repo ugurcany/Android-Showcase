@@ -20,7 +20,7 @@ public class MovieService implements IMovieService {
     @Inject
     MovieService(Retrofit.Builder retrofitBuilder) {
         api = retrofitBuilder
-                .baseUrl("http://www.omdbapi.com/")
+                .baseUrl("https://www.omdbapi.com/")
                 .build()
                 .create(MovieApi.class);
     }

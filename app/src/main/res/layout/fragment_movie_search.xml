@@ -45,7 +45,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerview_results"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                tools:listitem="@layout/view_movie_result_item" />
 
         </com.kennyc.view.MultiStateView>
 

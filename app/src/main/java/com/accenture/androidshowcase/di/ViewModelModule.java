@@ -1,6 +1,6 @@
 package com.accenture.androidshowcase.di;
 
-import com.accenture.androidshowcase.ui.act_bottombar.frag.BottomBarViewModel;
+import com.accenture.androidshowcase.ui.act_multicounter.frag.MultiCounterViewModel;
 import com.accenture.androidshowcase.ui.act_moviesearch.frag.MovieSearchViewModel;
 import com.accenture.androidshowcase.viewmodel.ViewModelFactory;
 
@@ -21,8 +21,8 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(BottomBarViewModel.class)
-    abstract ViewModel bottomBarViewModel(BottomBarViewModel viewModel);
+    @ViewModelKey(MultiCounterViewModel.class)
+    abstract ViewModel multiCounterViewModel(MultiCounterViewModel viewModel);
 
     @Binds
     @IntoMap

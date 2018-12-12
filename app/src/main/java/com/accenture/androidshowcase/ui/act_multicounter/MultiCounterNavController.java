@@ -1,4 +1,4 @@
-package com.accenture.androidshowcase.ui.act_bottombar;
+package com.accenture.androidshowcase.ui.act_multicounter;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -6,7 +6,7 @@ import android.view.MenuItem;
 import com.accenture.androidshowcase.R;
 import com.accenture.androidshowcase.common.Navigator;
 import com.accenture.androidshowcase.di.ActivityScope;
-import com.accenture.androidshowcase.ui.act_bottombar.frag.BottomBarFragment;
+import com.accenture.androidshowcase.ui.act_multicounter.frag.MultiCounterFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.ncapdevi.fragnav.FragNavController;
 import com.ncapdevi.fragnav.FragNavTransactionOptions;
@@ -21,15 +21,15 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 @ActivityScope
-public class BottomBarNavController implements IBottomBarNav {
+public class MultiCounterNavController implements IMultiCounterNav {
 
     private FragNavController fragNavController;
     private BottomNavigationView bottomBar;
 
     @Inject
-    BottomBarNavController(BottomBarActivity bottomBarActivity) {
+    MultiCounterNavController(MultiCounterActivity multiCounterActivity) {
         fragNavController = new FragNavController(
-                bottomBarActivity.getSupportFragmentManager(),
+                multiCounterActivity.getSupportFragmentManager(),
                 R.id.container_fragment);
         fragNavController.setNavigationStrategy(
                 new UniqueTabHistoryStrategy(this));
@@ -79,11 +79,11 @@ public class BottomBarNavController implements IBottomBarNav {
     public Fragment getRootFragment(int i) {
         switch (i) {
             case FragNavController.TAB1:
-                return BottomBarFragment.initialize(i + 1, 1);
+                return MultiCounterFragment.initialize(i + 1, 1);
             case FragNavController.TAB2:
-                return BottomBarFragment.initialize(i + 1, 1);
+                return MultiCounterFragment.initialize(i + 1, 1);
             case FragNavController.TAB3:
-                return BottomBarFragment.initialize(i + 1, 1);
+                return MultiCounterFragment.initialize(i + 1, 1);
         }
         throw new IllegalStateException("No tab found for index:" + i);
     }
@@ -121,6 +121,6 @@ public class BottomBarNavController implements IBottomBarNav {
     @Override
     public void pushFragment(int pageId, int pageInCurrentTabId) {
         fragNavController.pushFragment(
-                BottomBarFragment.initialize(pageId, pageInCurrentTabId));
+                MultiCounterFragment.initialize(pageId, pageInCurrentTabId));
     }
 }
