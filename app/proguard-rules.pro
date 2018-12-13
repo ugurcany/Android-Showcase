@@ -252,3 +252,9 @@
 -keepclassmembers  class **$** extends com.chad.library.adapter.base.BaseViewHolder {
      <init>(...);
 }
+
+##########
+# WaspDb
+##########
+-keep class net.rehacktive.waspdb.** { *; }
+-keep class com.esotericsoftware.kryo.** { *; }
