@@ -7,9 +7,9 @@ Android stuff in proper and structured way. To do that, it provides a list of sm
 sub-apps, each of which is implemented utilizing libraries & components that Android
 developers use on daily basis.
 
-### List of Apps
+## List of Apps
 
-#### 1. Multi-Counter
+### 1. Multi-Counter
 
 A multi-fragment app that lets you play with counters while wandering through fragments
 
@@ -17,7 +17,7 @@ Libraries used:
 - **FragNav** - github.com/ncapdevi/FragNav
 - **StateSaver** - github.com/evernote/android-state
 
-#### 2. Movie Search
+### 2. Movie Search
 
 An MVVM app that lets you search for movies through a REST movie API
 
@@ -28,20 +28,20 @@ Libraries used:
 - **BRVAH** - github.com/CymChad/BaseRecyclerViewAdapterHelper
 - **StateSaver** - github.com/evernote/android-state
 
-#### More coming soon...
+### More coming soon...
 
-### License
+## License
 
-Copyright 2018 UGURCAN YILDIRIM
+    Copyright 2018 UGURCAN YILDIRIM
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+       http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
