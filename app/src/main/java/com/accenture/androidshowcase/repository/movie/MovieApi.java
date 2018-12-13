@@ -1,4 +1,4 @@
-package com.accenture.androidshowcase.service.movie;
+package com.accenture.androidshowcase.repository.movie;
 
 import com.accenture.androidshowcase.data.MovieResults;
 

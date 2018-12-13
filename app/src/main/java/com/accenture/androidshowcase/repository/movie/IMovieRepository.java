@@ -1,10 +1,10 @@
-package com.accenture.androidshowcase.service.movie;
+package com.accenture.androidshowcase.repository.movie;
 
 import com.accenture.androidshowcase.data.MovieResults;
 
 import io.reactivex.Observable;
 
-public interface IMovieService {
+public interface IMovieRepository {
 
     Observable<MovieResults> search(String searchText);
 

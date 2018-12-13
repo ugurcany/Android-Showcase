@@ -1,4 +1,4 @@
-package com.accenture.androidshowcase.service.movie;
+package com.accenture.androidshowcase.repository.movie;
 
 import com.accenture.androidshowcase.data.MovieResults;
 
@@ -14,7 +14,7 @@ import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
 
 @Singleton
-public class MovieService implements IMovieService {
+public class MovieRepository implements IMovieRepository {
 
     private static final String API_KEY = "583ac0ed";
     private static final String MOVIE_RESULTS_TABLE = "movie_results";
@@ -23,7 +23,7 @@ public class MovieService implements IMovieService {
     private WaspHash movieResultsDb;
 
     @Inject
-    MovieService(Retrofit.Builder retrofitBuilder, WaspDb waspDb) {
+    MovieRepository(Retrofit.Builder retrofitBuilder, WaspDb waspDb) {
         api = retrofitBuilder
                 .baseUrl("https://www.omdbapi.com/")
                 .build()

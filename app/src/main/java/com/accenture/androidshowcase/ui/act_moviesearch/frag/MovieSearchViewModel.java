@@ -1,7 +1,7 @@
 package com.accenture.androidshowcase.ui.act_moviesearch.frag;
 
 import com.accenture.androidshowcase.data.MovieResults;
-import com.accenture.androidshowcase.service.movie.IMovieService;
+import com.accenture.androidshowcase.repository.movie.IMovieRepository;
 import com.accenture.androidshowcase.ui.base.BaseViewModel;
 
 import javax.inject.Inject;
@@ -10,13 +10,13 @@ import androidx.lifecycle.MutableLiveData;
 
 public class MovieSearchViewModel extends BaseViewModel {
 
-    private IMovieService movieService;
+    private IMovieRepository movieService;
 
     private final MutableLiveData<MovieResults> results = new MutableLiveData<>();
     private final MutableLiveData<MovieResultsState> resultsState = new MutableLiveData<>();
 
     @Inject
-    MovieSearchViewModel(IMovieService movieService) {
+    MovieSearchViewModel(IMovieRepository movieService) {
         this.movieService = movieService;
 
         results.setValue(null);
