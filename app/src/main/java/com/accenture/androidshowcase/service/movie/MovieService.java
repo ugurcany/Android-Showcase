@@ -20,7 +20,7 @@ public class MovieService implements IMovieService {
     private static final String MOVIE_RESULTS_TABLE = "movie_results";
 
     private MovieApi api;
-    private WaspHash movieResultsTable;
+    private WaspHash movieResultsDb;
 
     @Inject
     MovieService(Retrofit.Builder retrofitBuilder, WaspDb waspDb) {
@@ -29,22 +29,29 @@ public class MovieService implements IMovieService {
                 .build()
                 .create(MovieApi.class);
 
-        movieResultsTable = waspDb.openOrCreateHash(MOVIE_RESULTS_TABLE);
+        movieResultsDb = waspDb.openOrCreateHash(MOVIE_RESULTS_TABLE);
     }
 
     @Override
     public Observable<MovieResults> search(String searchText) {
-        MovieResults movieResultsInDb;
-
         return Observable.concat(
-                (movieResultsInDb = movieResultsTable.get(searchText)) != null
-                        ? Observable.just(movieResultsInDb) : Observable.empty(),
-                api.search(API_KEY, searchText)
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .doOnNext((MovieResults movieResults) -> {
-                            movieResultsTable.put(searchText, movieResults);
-                        })
+                movieResultsInLocalDb(searchText),
+                movieResultsThruApi(searchText)
         );
+    }
+
+    private Observable<MovieResults> movieResultsInLocalDb(String searchText) {
+        MovieResults movieResultsInDb;
+        return (movieResultsInDb = movieResultsDb.get(searchText)) != null
+                ? Observable.just(movieResultsInDb) : Observable.empty();
+    }
+
+    private Observable<MovieResults> movieResultsThruApi(String searchText) {
+        return api.search(API_KEY, searchText)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnNext((MovieResults movieResults) ->
+                        movieResultsDb.put(searchText, movieResults)
+                );
     }
 }
