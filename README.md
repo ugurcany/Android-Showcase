@@ -4,8 +4,9 @@
 
 **Android Showcase** is a project that exhibits **how to implement common Android stuff in proper and structured way**. To do that, it provides a list of small sub-apps, each of which is implemented utilizing libraries & components that Android developers use on daily basis.
 
-<img src="stuff/ss1.png" width="25%"><img src="stuff/ss2.png" width="25%"><img src="stuff/ss3.png" width="25%">
-
+<p align="center">
+<img src="stuff/ss1.png" width="25%"> <img src="stuff/ss2.png" width="25%"> <img src="stuff/ss3.png" width="25%">
+</p>
 
 
 ## List of Apps
