@@ -8,7 +8,7 @@ import javax.inject.Singleton;
 import dagger.Binds;
 import dagger.Module;
 
-@Module(includes = RestModule.class)
+@Module(includes = {RestModule.class, LocalDbModule.class})
 abstract class ServiceModule {
 
     @Binds

@@ -105,6 +105,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$dep_versions.retrofit"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$dep_versions.retrofit"
     implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+    //WASP DB
+    implementation 'com.github.rehacktive:waspdb:1.1.1'
     //UI
     implementation 'com.ncapdevi:frag-nav:3.0.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
