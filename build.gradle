@@ -20,6 +20,5 @@ task clean(type: Delete) {
 
 task assembleAll {
     dependsOn 'app:assembleDebug'
-    dependsOn 'app:assembleAdmin'
     dependsOn 'app:assembleRelease'
 }
