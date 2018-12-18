@@ -1,6 +1,6 @@
-# Android Showcase 📱
+# Android Showcase
 
-[![Build Status](https://app.bitrise.io/app/4d4cf51c2dab8f0f/status.svg?token=kdN0gi9js4QkpVuhyKY0Aw)](https://app.bitrise.io/app/4d4cf51c2dab8f0f)
+[![Build Status](https://app.bitrise.io/app/4d4cf51c2dab8f0f/status.svg?token=kdN0gi9js4QkpVuhyKY0Aw)](https://app.bitrise.io/app/4d4cf51c2dab8f0f) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Android%20Showcase-blue.svg?style=flat)](https://android-arsenal.com/details/3/7392)
 
 **Android Showcase** is a project that exhibits **how to implement common Android stuff in proper and structured way**. To do that, it provides a list of small sub-apps, each of which is implemented utilizing libraries & components that Android developers use on daily basis.
 
