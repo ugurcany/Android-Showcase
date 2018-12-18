@@ -4,6 +4,5 @@ import io.reactivex.functions.Action
 import java.io.Serializable
 
 data class MainListItem(var title: String,
-                        var subtitle: String,
                         var desc: String,
                         var clickAction: Action) : Serializable

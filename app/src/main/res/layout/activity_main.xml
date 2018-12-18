@@ -14,16 +14,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             tools:listitem="@layout/view_card_item" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autoLink="web"
-            android:text="@string/main_footnote"
-            android:textColor="@color/colorDarkSecondary" />
 
     </LinearLayout>
 

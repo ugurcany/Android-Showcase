@@ -43,12 +43,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
 
         items.add(new MainListItem(
                 getString(R.string.main_title_multicounter),
-                getString(R.string.main_subtitle_multicounter),
                 getString(R.string.main_desc_multicounter),
                 () -> Navigator.start(this, MultiCounterActivity.class)));
         items.add(new MainListItem(
                 getString(R.string.main_title_moviesearch),
-                getString(R.string.main_subtitle_moviesearch),
                 getString(R.string.main_desc_moviesearch),
                 () -> Navigator.start(this, MovieSearchActivity.class)));
 

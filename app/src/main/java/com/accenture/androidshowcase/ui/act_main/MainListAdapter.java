@@ -16,7 +16,6 @@ public class MainListAdapter extends BaseQuickAdapter<MainListItem, BaseViewHold
     @Override
     protected void convert(BaseViewHolder viewHolder, MainListItem item) {
         viewHolder.setText(R.id.textview_title, item.getTitle());
-        viewHolder.setText(R.id.textview_subtitle, item.getSubtitle());
         viewHolder.setText(R.id.textview_desc, item.getDesc());
     }
 }
