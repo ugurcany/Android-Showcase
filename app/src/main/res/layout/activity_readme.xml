@@ -7,14 +7,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorLightSecondary"
-        android:padding="@dimen/activity_padding"
-        tools:context=".ui.act_main.MainActivity">
+        tools:context=".ui.act_readme.ReadmeActivity">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
+        <br.tiagohm.markdownview.MarkdownView
+            android:id="@+id/mdview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:listitem="@layout/view_card_item" />
+            app:escapeHtml="false" />
 
     </FrameLayout>
 

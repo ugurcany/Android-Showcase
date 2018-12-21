@@ -5,6 +5,7 @@
     <string name="text_click_back_again">Click BACK again to exit!</string>
 
     <!--MAIN-->
+    <string name="main_info">README</string>
     <string name="main_title_multicounter">Multi-Counter</string>
     <string name="main_desc_multicounter">A multi-fragment app that lets you play with counters while wandering through fragments</string>
     <string name="main_title_moviesearch">Movie Search</string>

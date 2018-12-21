@@ -1,6 +1,8 @@
 package com.accenture.androidshowcase.ui.act_main;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.accenture.androidshowcase.R;
@@ -9,6 +11,7 @@ import com.accenture.androidshowcase.data.MainListItem;
 import com.accenture.androidshowcase.databinding.ActivityMainBinding;
 import com.accenture.androidshowcase.ui.act_moviesearch.MovieSearchActivity;
 import com.accenture.androidshowcase.ui.act_multicounter.MultiCounterActivity;
+import com.accenture.androidshowcase.ui.act_readme.ReadmeActivity;
 import com.accenture.androidshowcase.ui.base.BaseActivity;
 import com.blankj.utilcode.util.LogUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -36,6 +39,24 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
     @Override
     public boolean doubleClickToExitEnabled() {
         return false;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_info:
+                Navigator.start(this, ReadmeActivity.class);
+                break;
+            default:
+                break;
+        }
+        return true;
     }
 
     private List<MainListItem> initListItems() {

@@ -3,6 +3,7 @@ package com.accenture.androidshowcase.di;
 import com.accenture.androidshowcase.di.act_module.MultiCounterActivityModule;
 import com.accenture.androidshowcase.di.act_module.MovieSearchActivityModule;
 import com.accenture.androidshowcase.ui.act_main.MainActivity;
+import com.accenture.androidshowcase.ui.act_readme.ReadmeActivity;
 import com.accenture.androidshowcase.ui.act_splash.SplashActivity;
 import com.accenture.androidshowcase.ui.act_multicounter.MultiCounterActivity;
 import com.accenture.androidshowcase.ui.act_moviesearch.MovieSearchActivity;
@@ -20,6 +21,10 @@ abstract class ActivityModule {
     @ActivityScope
     @ContributesAndroidInjector
     abstract MainActivity contributeMainActivity();
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract ReadmeActivity contributeReadmeActivity();
 
     @ActivityScope
     @ContributesAndroidInjector(modules = MultiCounterActivityModule.class)

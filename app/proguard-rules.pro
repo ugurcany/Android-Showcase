@@ -273,3 +273,10 @@
 -keep,allowshrinking class com.esotericsoftware.kryo.** { *; }
 -keep,allowshrinking class com.esotericsoftware.kryo.io.** { *; }
 -keep,allowshrinking class sun.nio.ch.** { *; }
+
+##########
+# MarkdownView
+##########
+-dontwarn java.awt.**
+-dontwarn javax.swing.**
+-dontwarn javax.imageio.**

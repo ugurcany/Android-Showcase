@@ -30,6 +30,12 @@
             android:launchMode="singleTop" />
 
         <activity
+            android:name=".ui.act_readme.ReadmeActivity"
+            android:label="@string/main_info"
+            android:launchMode="singleTop"
+            android:parentActivityName=".ui.act_readme.ReadmeActivity" />
+
+        <activity
             android:name=".ui.act_multicounter.MultiCounterActivity"
             android:label="@string/main_title_multicounter"
             android:launchMode="singleTop"
