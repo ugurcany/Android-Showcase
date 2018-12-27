@@ -27,7 +27,7 @@
 ##########
 # Data models
 ##########
--keepclassmembers class com.accenture.androidshowcase.data.** { *; }
+-keepclassmembers class mobi.mergen.androidshowcase.data.** { *; }
 
 ##########
 # Android

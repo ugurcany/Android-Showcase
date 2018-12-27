@@ -47,12 +47,15 @@ android {
             minifyEnabled false
 
             applicationIdSuffix ".debug"
+            manifestPlaceholders = [appName: "DEBUG"]
         }
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+
+            manifestPlaceholders = [appName: "@string/app_name"]
         }
     }
 
@@ -69,15 +72,15 @@ dependencies {
     //ANDROIDX
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'com.google.android.material:material:1.1.0-alpha02'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
     //ARCH
     implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
     implementation 'androidx.lifecycle:lifecycle-common-java8:2.0.0'
     //TEST
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    androidTestImplementation 'androidx.test:core:1.1.0'
     androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test:rules:1.1.1'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     //KOTLIN
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$dep_versions.kotlin"
     //DAGGER

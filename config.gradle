@@ -1,5 +1,5 @@
 def app = [:]
-app.id = "com.accenture.androidshowcase"
+app.id = "mobi.mergen.androidshowcase"
 app.version_code = 1
 app.version_name = "1.0"
 ext.app = app
