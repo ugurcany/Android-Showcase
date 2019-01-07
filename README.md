@@ -8,7 +8,7 @@
 <img src="stuff/ss1.png" width="20%"> <img src="stuff/ss2.png" width="20%"> <img src="stuff/ss3.png" width="20%"> <img src="stuff/ss4.png" width="20%">
 </p>
 
-This project is under constant development. Please feel free to provide suggestions.
+This project is under constant development. Please feel free to provide suggestions for improvements and point out any flawed approach you see. Every contribution is appreciated!
 
 
 
