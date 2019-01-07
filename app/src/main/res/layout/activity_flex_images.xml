@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:alignContent="stretch"
+        app:alignItems="stretch"
+        app:dividerDrawable="@drawable/divider_flex_images"
+        app:flexDirection="row"
+        app:flexWrap="wrap"
+        app:showDivider="beginning|middle|end"
+        tools:context=".ui.act_fleximages.FlexImagesActivity">
+
+        <ImageView
+            android:id="@+id/imageview_1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_flexGrow="1" />
+
+        <ImageView
+            android:id="@+id/imageview_2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_flexGrow="1" />
+
+        <ImageView
+            android:id="@+id/imageview_3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_flexGrow="2" />
+
+        <ImageView
+            android:id="@+id/imageview_4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_flexGrow="2"
+            app:layout_wrapBefore="true" />
+
+        <ImageView
+            android:id="@+id/imageview_5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_flexGrow="1" />
+
+        <ImageView
+            android:id="@+id/imageview_6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_flexGrow="1" />
+
+        <ImageView
+            android:id="@+id/imageview_7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_flexGrow="1"
+            app:layout_wrapBefore="true" />
+
+        <ImageView
+            android:id="@+id/imageview_8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            app:layout_flexGrow="1" />
+
+    </com.google.android.flexbox.FlexboxLayout>
+
+</layout>

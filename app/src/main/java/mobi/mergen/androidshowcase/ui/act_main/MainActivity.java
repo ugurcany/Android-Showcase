@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import mobi.mergen.androidshowcase.R;
 import mobi.mergen.androidshowcase.common.Navigator;
 import mobi.mergen.androidshowcase.data.MainListItem;
+import mobi.mergen.androidshowcase.ui.act_fleximages.FlexImagesActivity;
 import mobi.mergen.androidshowcase.ui.act_moviesearch.MovieSearchActivity;
 import mobi.mergen.androidshowcase.ui.act_multicounter.MultiCounterActivity;
 import mobi.mergen.androidshowcase.ui.act_readme.ReadmeActivity;
@@ -70,7 +71,10 @@ public class MainActivity extends BaseActivity<ActivityMainBinding>
                 getString(R.string.main_title_moviesearch),
                 getString(R.string.main_desc_moviesearch),
                 () -> Navigator.start(this, MovieSearchActivity.class)));
-
+        items.add(new MainListItem(
+                getString(R.string.main_title_fleximages),
+                getString(R.string.main_desc_fleximages),
+                () -> Navigator.start(this, FlexImagesActivity.class)));
         return items;
     }
 

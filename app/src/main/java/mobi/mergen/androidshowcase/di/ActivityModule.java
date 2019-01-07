@@ -4,6 +4,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import mobi.mergen.androidshowcase.di.act_module.MovieSearchActivityModule;
 import mobi.mergen.androidshowcase.di.act_module.MultiCounterActivityModule;
+import mobi.mergen.androidshowcase.ui.act_fleximages.FlexImagesActivity;
 import mobi.mergen.androidshowcase.ui.act_main.MainActivity;
 import mobi.mergen.androidshowcase.ui.act_moviesearch.MovieSearchActivity;
 import mobi.mergen.androidshowcase.ui.act_multicounter.MultiCounterActivity;
@@ -27,10 +28,14 @@ abstract class ActivityModule {
 
     @ActivityScope
     @ContributesAndroidInjector(modules = MultiCounterActivityModule.class)
-    abstract MultiCounterActivity contributeBottomBarActivity();
+    abstract MultiCounterActivity contributeMutliCounterActivity();
 
     @ActivityScope
     @ContributesAndroidInjector(modules = MovieSearchActivityModule.class)
     abstract MovieSearchActivity contributeMovieSearchActivity();
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract FlexImagesActivity contributeFlexImagesActivity();
 
 }

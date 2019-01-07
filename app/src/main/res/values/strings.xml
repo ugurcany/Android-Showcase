@@ -9,7 +9,9 @@
     <string name="main_title_multicounter">Multi-Counter</string>
     <string name="main_desc_multicounter">A multi-fragment app that lets you play with counters while wandering through fragments</string>
     <string name="main_title_moviesearch">Movie Search</string>
-    <string name="main_desc_moviesearch">An MVVM app that lets you search for movies through a REST movie API</string>
+    <string name="main_desc_moviesearch">An MVVM app that lets you search for movies through a REST movie API (with local db cache support)</string>
+    <string name="main_title_fleximages">Flex Images</string>
+    <string name="main_desc_fleximages">A grid-like app that uses Google\'s Flexbox layout to display images</string>
     <!--MAIN-->
 
     <!--MULTI-COUNTER-->

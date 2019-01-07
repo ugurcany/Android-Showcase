@@ -5,8 +5,11 @@
 **Android Showcase** is a project that exhibits **how to implement common Android stuff in proper and structured way**. To do that, it provides a list of small sub-apps, each of which is implemented utilizing libraries & components that Android developers use on daily basis.
 
 <p align="center">
-<img src="stuff/ss1.png" width="25%"> <img src="stuff/ss2.png" width="25%"> <img src="stuff/ss3.png" width="25%">
+<img src="stuff/ss1.png" width="20%"> <img src="stuff/ss2.png" width="20%"> <img src="stuff/ss3.png" width="20%"> <img src="stuff/ss4.png" width="20%">
 </p>
+
+This project is under constant development. Please feel free to provide suggestions.
+
 
 
 ## List of Apps
@@ -17,19 +20,29 @@ Following is the list of sub-apps showcased in this project:
 
 A **multi-fragment** app that lets you play with counters while wandering through fragments
 
-Libraries used:
+Key libraries showcased:
 - [**FragNav**](https://github.com/ncapdevi/FragNav) - Android library for managing multiple stacks of fragments
+- [**StateSaver**](https://github.com/evernote/android-state) - A utility library for Android to save objects in a `Bundle` without any boilerplate
 
 ### 2. Movie Search
 
-An **MVVM** app that lets you search for movies through a REST movie API
+An **MVVM** app that lets you search for movies through a REST movie API (with local db cache support)
 
-Libraries used:
+Key libraries showcased:
 - [**Retrofit**](https://github.com/square/retrofit) - Type-safe HTTP client for Android and Java by Square, Inc.
 - [**WaspDb**](https://github.com/rehacktive/waspdb) - A pure Java key/value (NoSQL) database library for Android
 - [**MultiStateView**](https://github.com/Kennyc1012/MultiStateView) - Android View that displays different content based on its state
+- [**BRVAH**](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) - Powerful and flexible RecyclerAdapter
+
+### 3. Flex Images
+
+A grid-like app that uses **Google's Flexbox** layout to display images
+
+Key libraries showcased:
+
+- [**FlexboxLayout**](https://github.com/google/flexbox-layout) - A library project which brings the similar capabilities of
+  [CSS Flexible Box Layout Module](https://www.w3.org/TR/css-flexbox-1) to Android
 - [**Picasso**](https://github.com/square/picasso) - A powerful image downloading and caching library for Android
-- [**Picasso Transformations**](https://github.com/wasabeef/picasso-transformations) - An Android transformation library providing a variety of image transformations for [Picasso](https://github.com/square/picasso)
 
 ### More coming soon...
 
@@ -49,6 +62,9 @@ Libraries and components used throughout the app (not specific to a sub-app) are
 - [**RxAndroid**](https://github.com/ReactiveX/RxAndroid) - Android specific bindings for [RxJava 2](http://github.com/ReactiveX/RxJava)
 - [**StateSaver**](https://github.com/evernote/android-state) - A utility library for Android to save objects in a `Bundle` without any boilerplate
 - [**BRVAH**](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) - Powerful and flexible RecyclerAdapter
+- [**Android-SpinKit**](https://github.com/ybq/Android-SpinKit) - Android loading animations
+- [**Picasso**](https://github.com/square/picasso) - A powerful image downloading and caching library for Android
+- [**Picasso Transformations**](https://github.com/wasabeef/picasso-transformations) - An Android transformation library providing a variety of image transformations for [Picasso](https://github.com/square/picasso)
 
 
 
