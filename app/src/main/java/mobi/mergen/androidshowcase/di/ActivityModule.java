@@ -20,6 +20,7 @@ import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 import mobi.mergen.androidshowcase.di.act_module.MovieSearchActivityModule;
 import mobi.mergen.androidshowcase.di.act_module.MultiCounterActivityModule;
+import mobi.mergen.androidshowcase.di.helper.ActivityScope;
 import mobi.mergen.androidshowcase.ui.act_fleximages.FlexImagesActivity;
 import mobi.mergen.androidshowcase.ui.act_main.MainActivity;
 import mobi.mergen.androidshowcase.ui.act_moviesearch.MovieSearchActivity;

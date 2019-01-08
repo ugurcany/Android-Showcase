@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package mobi.mergen.androidshowcase.di;
+package mobi.mergen.androidshowcase.di.helper;
 
 import javax.inject.Scope;
 

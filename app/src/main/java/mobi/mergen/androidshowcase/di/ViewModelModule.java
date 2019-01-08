@@ -23,6 +23,7 @@ import androidx.lifecycle.ViewModelProvider;
 import dagger.Binds;
 import dagger.Module;
 import dagger.multibindings.IntoMap;
+import mobi.mergen.androidshowcase.di.helper.ViewModelKey;
 import mobi.mergen.androidshowcase.ui.act_moviesearch.frag.MovieSearchViewModel;
 import mobi.mergen.androidshowcase.ui.act_multicounter.frag.MultiCounterViewModel;
 import mobi.mergen.androidshowcase.viewmodel.ViewModelFactory;

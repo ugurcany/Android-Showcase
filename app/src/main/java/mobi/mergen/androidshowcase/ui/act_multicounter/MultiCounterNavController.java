@@ -33,7 +33,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import mobi.mergen.androidshowcase.R;
 import mobi.mergen.androidshowcase.common.Navigator;
-import mobi.mergen.androidshowcase.di.ActivityScope;
+import mobi.mergen.androidshowcase.di.helper.ActivityScope;
 import mobi.mergen.androidshowcase.ui.act_multicounter.frag.MultiCounterFragment;
 
 @ActivityScope

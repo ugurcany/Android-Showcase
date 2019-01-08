@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package mobi.mergen.androidshowcase.di;
+package mobi.mergen.androidshowcase.di.helper;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -29,6 +29,6 @@ import dagger.MapKey;
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 @MapKey
-@interface ViewModelKey {
+public @interface ViewModelKey {
     Class<? extends ViewModel> value();
 }
