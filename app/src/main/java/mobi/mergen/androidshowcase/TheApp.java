@@ -40,7 +40,7 @@ public class TheApp extends DaggerApplication {
             // You should not init your app in this process.
             return;
         }
-        //LeakCanary.install(this);
+        //LeakCanary.install(this); //NOT NOW!!!
         StateSaver.setEnabledForAllActivitiesAndSupportFragments(this, true);
         initUtils();
         initPicasso();

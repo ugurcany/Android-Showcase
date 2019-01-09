@@ -32,6 +32,8 @@ import mobi.mergen.androidshowcase.common.Navigator;
 public abstract class BaseActivity<V extends ViewDataBinding>
         extends DaggerAppCompatActivity {
 
+    public static final String IS_TESTING = "testing";
+
     private boolean backToExitClickedOnce = false;
 
     private V binding;
@@ -92,5 +94,9 @@ public abstract class BaseActivity<V extends ViewDataBinding>
     public boolean onSupportNavigateUp() {
         onBackPressed();
         return true;
+    }
+
+    public boolean isTesting() {
+        return getIntent().getBooleanExtra(IS_TESTING, false);
     }
 }

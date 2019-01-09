@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorLightSecondary"
-        android:padding="@dimen/activity_padding"
+        android:padding="@dimen/default_padding"
         tools:context=".ui.act_main.MainActivity">
 
         <androidx.recyclerview.widget.RecyclerView

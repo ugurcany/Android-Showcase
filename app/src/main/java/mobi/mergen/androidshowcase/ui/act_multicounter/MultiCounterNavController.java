@@ -59,7 +59,7 @@ public class MultiCounterNavController implements IMultiCounterNav {
 
     @Override
     public void init(Bundle savedInstanceState, BottomNavigationView bottomBar) {
-        bottomBar.setSelectedItemId(R.id.action_home);
+        bottomBar.setSelectedItemId(R.id.action_page1);
         bottomBar.setOnNavigationItemSelectedListener(this);
         bottomBar.setOnNavigationItemReselectedListener(this);
         this.bottomBar = bottomBar;
@@ -113,13 +113,13 @@ public class MultiCounterNavController implements IMultiCounterNav {
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_home:
+            case R.id.action_page1:
                 fragNavController.switchTab(FragNavController.TAB1);
                 break;
-            case R.id.action_explore:
+            case R.id.action_page2:
                 fragNavController.switchTab(FragNavController.TAB2);
                 break;
-            case R.id.action_profile:
+            case R.id.action_page3:
                 fragNavController.switchTab(FragNavController.TAB3);
                 break;
         }

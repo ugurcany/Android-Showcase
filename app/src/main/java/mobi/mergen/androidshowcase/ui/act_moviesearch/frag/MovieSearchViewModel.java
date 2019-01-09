@@ -34,8 +34,8 @@ public class MovieSearchViewModel extends BaseViewModel {
     MovieSearchViewModel(IMovieRepository movieService) {
         this.movieService = movieService;
 
-        results.setValue(null);
-        resultsState.setValue(MovieResultsState.EMPTY);
+        results.postValue(null);
+        resultsState.postValue(MovieResultsState.EMPTY);
     }
 
     MutableLiveData<MovieResults> getResults() {
@@ -50,18 +50,17 @@ public class MovieSearchViewModel extends BaseViewModel {
         resultsState.setValue(MovieResultsState.LOADING);
 
         dispose(movieService.search(searchText)
-                .doOnNext((MovieResults movieResults) -> {
-                    results.setValue(movieResults);
-                    if (movieResults.isSuccessful()) {
-                        resultsState.setValue(MovieResultsState.CONTENT);
-                    } else {
-                        resultsState.setValue(MovieResultsState.ERROR);
-                    }
-                })
-                .doOnError((Throwable throwable) -> {
-                    results.setValue(null);
-                    resultsState.setValue(MovieResultsState.ERROR);
-                })
-                .subscribe());
+                .subscribe((MovieResults movieResults) -> {
+                            results.setValue(movieResults);
+                            if (movieResults.isSuccessful()) {
+                                resultsState.setValue(MovieResultsState.CONTENT);
+                            } else {
+                                resultsState.setValue(MovieResultsState.ERROR);
+                            }
+                        },
+                        (Throwable throwable) -> {
+                            results.setValue(null);
+                            resultsState.setValue(MovieResultsState.ERROR);
+                        }));
     }
 }

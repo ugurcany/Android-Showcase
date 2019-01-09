@@ -22,7 +22,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/activity_padding">
+        android:padding="@dimen/default_padding">
 
         <TextView
             android:layout_width="wrap_content"

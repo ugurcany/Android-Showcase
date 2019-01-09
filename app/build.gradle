@@ -85,6 +85,8 @@ android {
     }
 }
 
+configurations.all { resolutionStrategy { force 'org.objenesis:objenesis:2.1' } }
+
 dependencies {
     //ANDROIDX
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -98,6 +100,11 @@ dependencies {
     androidTestImplementation 'androidx.test:core:1.1.0'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation('com.schibsted.spain:barista:2.7.1') {
+        exclude group: 'com.android.support'
+        exclude group: 'org.jetbrains.kotlin'
+    }
+    androidTestImplementation 'org.mockito:mockito-android:2.7.22'
     //KOTLIN
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$dep_versions.kotlin"
     //DAGGER

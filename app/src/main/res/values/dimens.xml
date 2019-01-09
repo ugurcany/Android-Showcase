@@ -17,6 +17,6 @@
 
 <resources>
 
-    <dimen name="activity_padding">16dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
 
 </resources>

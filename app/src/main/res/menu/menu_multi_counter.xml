@@ -18,19 +18,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_home"
+        android:id="@+id/action_page1"
         android:enabled="true"
         android:icon="@drawable/ic_android"
         android:title="@string/multicounter_page_1"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_explore"
+        android:id="@+id/action_page2"
         android:enabled="true"
         android:icon="@drawable/ic_android"
         android:title="@string/multicounter_page_2"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_profile"
+        android:id="@+id/action_page3"
         android:enabled="true"
         android:icon="@drawable/ic_android"
         android:title="@string/multicounter_page_3"
