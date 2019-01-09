@@ -18,7 +18,6 @@ package mobi.mergen.androidshowcase.ui.act_moviesearch;
 
 import android.content.Intent;
 
-import com.google.gson.Gson;
 import com.schibsted.spain.barista.assertion.BaristaRecyclerViewAssertions;
 import com.schibsted.spain.barista.assertion.BaristaVisibilityAssertions;
 import com.schibsted.spain.barista.rule.BaristaRule;
@@ -33,16 +32,12 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.LargeTest;
-import androidx.test.platform.app.InstrumentationRegistry;
 import io.reactivex.Observable;
 import mobi.mergen.androidshowcase.R;
 import mobi.mergen.androidshowcase.data.MovieResults;
+import mobi.mergen.androidshowcase.helper.ResourceUtil;
 import mobi.mergen.androidshowcase.helper.SearchViewInteractions;
 import mobi.mergen.androidshowcase.repository.movie.IMovieRepository;
 import mobi.mergen.androidshowcase.ui.act_moviesearch.frag.MovieSearchViewModel;
@@ -80,41 +75,38 @@ public class MovieSearchActivityTest {
 
     @Test
     @AllowFlaky(attempts = 1)
-    public void checkEmptyTextVisible() {
+    public void checkEmptyTextVisibility() {
         BaristaVisibilityAssertions.assertDisplayed(R.string.moviesearch_results_empty);
     }
 
     @Test
     @AllowFlaky(attempts = 1)
     public void checkResultsVisibilityAndCount() {
-        Mockito.when(movieRepository.search(Mockito.anyString()))
-                .thenReturn(Observable.just(movieSearchResponse()));
+        String searchText = "lord";
+        MovieResults response = ResourceUtil.readFromAssets(
+                "movie_search_response.json", MovieResults.class);
+        final int RESULTS_COUNT = 10;
 
-        SearchViewInteractions.writeToAndSubmit(R.id.searchview, "lord");
+        Mockito.when(movieRepository.search(searchText))
+                .thenReturn(Observable.just(response));
+
+        SearchViewInteractions.writeToAndSubmit(R.id.searchview, searchText);
 
         BaristaVisibilityAssertions.assertDisplayed(R.id.recyclerview_results);
         BaristaRecyclerViewAssertions.assertRecyclerViewItemCount(
-                R.id.recyclerview_results, 10);
+                R.id.recyclerview_results, RESULTS_COUNT);
     }
 
     @Test
     @AllowFlaky(attempts = 1)
-    public void checkErrorTextVisible() {
-        Mockito.when(movieRepository.search(Mockito.anyString()))
+    public void checkErrorTextVisibility() {
+        String searchText = "invalid movie title";
+
+        Mockito.when(movieRepository.search(searchText))
                 .thenReturn(Observable.error(new Exception()));
 
-        SearchViewInteractions.writeToAndSubmit(R.id.searchview, "invalid movie title");
+        SearchViewInteractions.writeToAndSubmit(R.id.searchview, searchText);
 
         BaristaVisibilityAssertions.assertDisplayed(R.string.moviesearch_results_error);
-    }
-
-    private MovieResults movieSearchResponse() {
-        try {
-            InputStream responseStream = InstrumentationRegistry.getInstrumentation().getContext()
-                    .getResources().getAssets().open("movie_search_response.json");
-            return new Gson().fromJson(new InputStreamReader(responseStream), MovieResults.class);
-        } catch (IOException e) {
-            return new MovieResults();
-        }
     }
 }

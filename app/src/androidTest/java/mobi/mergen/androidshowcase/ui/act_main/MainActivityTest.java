@@ -44,7 +44,7 @@ public class MainActivityTest {
 
     @Test
     @AllowFlaky(attempts = 1)
-    public void checkInfoButtonVisible() {
+    public void checkInfoButtonVisibility() {
         BaristaVisibilityAssertions.assertDisplayed(R.id.action_info);
     }
 
