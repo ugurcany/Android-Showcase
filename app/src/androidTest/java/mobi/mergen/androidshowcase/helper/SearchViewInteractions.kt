@@ -29,25 +29,24 @@ import org.hamcrest.Matchers
 object SearchViewInteractions {
 
     @JvmStatic
-    fun writeToAndSubmit(@IdRes searchViewId: Int, text: String) {
+    fun typeAndSubmit(@IdRes searchViewId: Int, text: String) {
         val withId = withId(searchViewId)
         val assignableFrom = isAssignableFrom(SearchView::class.java)
         val simpleMatcher = Matchers.allOf(withId, assignableFrom)
         val wrapperMatcher = Matchers.allOf(isDescendantOfA(withId), assignableFrom)
         val combinedMatcher = Matchers.anyOf(simpleMatcher, wrapperMatcher)
-        combinedMatcher.performAction(typeAndSubmit(text))
+        combinedMatcher.performAction(perform(text))
     }
 
     @JvmStatic
-    private fun typeAndSubmit(text: String): ViewAction {
+    private fun perform(text: String): ViewAction {
         return object : ViewAction {
             override fun getConstraints(): Matcher<View> {
-                //Ensure that only apply if it is a SearchView and if it is visible.
                 return Matchers.allOf(isDisplayed(), isAssignableFrom(SearchView::class.java))
             }
 
             override fun getDescription(): String {
-                return "Change view text"
+                return "Set text and submit"
             }
 
             override fun perform(uiController: UiController, view: View) {

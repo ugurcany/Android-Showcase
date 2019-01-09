@@ -90,7 +90,7 @@ public class MovieSearchActivityTest {
         Mockito.when(movieRepository.search(searchText))
                 .thenReturn(Observable.just(response));
 
-        SearchViewInteractions.writeToAndSubmit(R.id.searchview, searchText);
+        SearchViewInteractions.typeAndSubmit(R.id.searchview, searchText);
 
         BaristaVisibilityAssertions.assertDisplayed(R.id.recyclerview_results);
         BaristaRecyclerViewAssertions.assertRecyclerViewItemCount(
@@ -105,8 +105,9 @@ public class MovieSearchActivityTest {
         Mockito.when(movieRepository.search(searchText))
                 .thenReturn(Observable.error(new Exception()));
 
-        SearchViewInteractions.writeToAndSubmit(R.id.searchview, searchText);
+        SearchViewInteractions.typeAndSubmit(R.id.searchview, searchText);
 
         BaristaVisibilityAssertions.assertDisplayed(R.string.moviesearch_results_error);
     }
+
 }
