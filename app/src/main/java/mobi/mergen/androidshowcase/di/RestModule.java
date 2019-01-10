@@ -20,6 +20,8 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import mobi.mergen.androidshowcase.repository.movie.MovieApi;
+import mobi.mergen.androidshowcase.repository.movie.MovieApiInterceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -31,21 +33,35 @@ class RestModule {
 
     @Provides
     @Singleton
-    Retrofit.Builder retrofitBuilder(OkHttpClient httpClient) {
-        return new Retrofit.Builder()
+    MovieApi movieApi(Retrofit.Builder retrofitBuilder,
+                      OkHttpClient.Builder httpClientBuilder) {
+        OkHttpClient httpClient = httpClientBuilder
+                .addInterceptor(new MovieApiInterceptor())
+                .build();
+
+        return retrofitBuilder
                 .client(httpClient)
+                .baseUrl("https://www.omdbapi.com/")
+                .build()
+                .create(MovieApi.class);
+    }
+
+    @Provides
+    @Singleton
+    Retrofit.Builder retrofitBuilder() {
+        return new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create());
     }
 
     @Provides
     @Singleton
-    OkHttpClient httpClient() {
+    OkHttpClient.Builder httpClient() {
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+
         return new OkHttpClient.Builder()
-                .addInterceptor(interceptor)
-                .build();
+                .addInterceptor(interceptor);
     }
 
 }

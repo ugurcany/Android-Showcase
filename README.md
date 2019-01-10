@@ -30,7 +30,7 @@ An **MVVM** app that lets you search for movies through a REST movie API (with l
 
 Key libraries showcased:
 - [**Retrofit**](https://github.com/square/retrofit) - Type-safe HTTP client for Android and Java by Square, Inc.
-- [**WaspDb**](https://github.com/rehacktive/waspdb) - A pure Java key/value (NoSQL) database library for Android
+- [**MMKV**](https://github.com/Tencent/MMKV) - An efficient, small mobile key-value storage framework developed by WeChat
 - [**MultiStateView**](https://github.com/Kennyc1012/MultiStateView) - Android View that displays different content based on its state
 - [**BRVAH**](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) - Powerful and flexible RecyclerAdapter
 

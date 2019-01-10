@@ -16,27 +16,18 @@
 
 package mobi.mergen.androidshowcase.di;
 
-import android.content.Context;
-
-import net.rehacktive.waspdb.WaspDb;
-import net.rehacktive.waspdb.WaspFactory;
-
 import javax.inject.Singleton;
 
+import dagger.Binds;
 import dagger.Module;
-import dagger.Provides;
+import mobi.mergen.androidshowcase.repository.localdb.LocalDb;
+import mobi.mergen.androidshowcase.repository.localdb.MMKVDbImpl;
 
 @Module
-class LocalDbModule {
+abstract class LocalDbModule {
 
-    @Provides
+    @Binds
     @Singleton
-    WaspDb waspDb(Context context) {
-        String path = context.getFilesDir().getPath();
-        String dbName = "ShowcaseDb";
-        String password = "VerySecretPassword";
-
-        return WaspFactory.openOrCreateDatabase(path, dbName, password);
-    }
+    abstract LocalDb localDb(MMKVDbImpl localDb);
 
 }

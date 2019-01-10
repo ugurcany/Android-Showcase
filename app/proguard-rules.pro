@@ -268,27 +268,6 @@
 }
 
 ##########
-# WaspDb / Kryo
-##########
--keep class net.rehacktive.waspdb.** { *; }
--keep class com.esotericsoftware.kryo.** { *; }
--dontwarn sun.reflect.**
--dontwarn java.beans.**
--dontwarn sun.nio.ch.**
--dontwarn sun.misc.**
--dontwarn com.sun.misc.**
--dontwarn java.lang.invoke.SerializedLambda
--keep,allowshrinking class com.esotericsoftware.** {
-   <fields>;
-   <methods>;
-}
--keep,allowshrinking class java.beans.** { *; }
--keep,allowshrinking class sun.reflect.** { *; }
--keep,allowshrinking class com.esotericsoftware.kryo.** { *; }
--keep,allowshrinking class com.esotericsoftware.kryo.io.** { *; }
--keep,allowshrinking class sun.nio.ch.** { *; }
-
-##########
 # MarkdownView
 ##########
 -dontwarn java.awt.**

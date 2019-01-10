@@ -16,14 +16,12 @@
 
 package mobi.mergen.androidshowcase.data
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Movie(@SerializedName("imdbID") var imdbId: String,
                  @SerializedName("Title") var title: String,
                  @SerializedName("Year") var year: String,
-                 @SerializedName("Poster") var posterUrl: String) : Serializable {
-
-    constructor() : this("", "", "", "")
-
-}
+                 @SerializedName("Poster") var posterUrl: String) : Parcelable

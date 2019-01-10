@@ -14,17 +14,20 @@
  * limitations under the License.
  */
 
-package mobi.mergen.androidshowcase.data
+package mobi.mergen.androidshowcase.repository.localdb;
 
-import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
+import android.os.Parcelable;
 
-@Parcelize
-data class MovieResults(@SerializedName("Search") var movies: List<Movie>?,
-                        @SerializedName("Error") var errorMsg: String?,
-                        @SerializedName("Response") var response: String) : Parcelable {
+public interface LocalDb {
 
-    fun isSuccessful(): Boolean = response.equals("True", true)
+    <T extends Parcelable> Box getBox(String boxId, Class<T> classOfValues);
 
+
+    interface Box<T extends Parcelable> {
+
+        void put(String key, T value);
+
+        T get(String key);
+
+    }
 }

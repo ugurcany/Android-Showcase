@@ -16,14 +16,25 @@
 
 package mobi.mergen.androidshowcase.repository.movie;
 
-import io.reactivex.Observable;
-import mobi.mergen.androidshowcase.data.MovieResults;
-import retrofit2.http.GET;
-import retrofit2.http.Query;
+import java.io.IOException;
 
-public interface MovieApi {
+import okhttp3.HttpUrl;
+import okhttp3.Interceptor;
+import okhttp3.Request;
+import okhttp3.Response;
 
-    @GET("/")
-    Observable<MovieResults> search(@Query("s") String searchText);
+public class MovieApiInterceptor implements Interceptor {
 
+    private static final String API_KEY = "583ac0ed";
+
+    @Override
+    public Response intercept(Chain chain) throws IOException {
+        Request request = chain.request();
+        HttpUrl url = request.url().newBuilder()
+                .addQueryParameter("apikey", API_KEY)
+                .build();
+        request = request.newBuilder().url(url).build();
+
+        return chain.proceed(request);
+    }
 }
