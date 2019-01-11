@@ -40,17 +40,18 @@ A grid-like app that uses **Google's Flexbox** layout to display images
 
 Key libraries showcased:
 
-- [**FlexboxLayout**](https://github.com/google/flexbox-layout) - A library project which brings the similar capabilities of
-  [CSS Flexible Box Layout Module](https://www.w3.org/TR/css-flexbox-1) to Android
+- [**FlexboxLayout**](https://github.com/google/flexbox-layout) - A library project which brings the similar capabilities of [CSS Flexible Box Layout Module](https://www.w3.org/TR/css-flexbox-1) to Android
 - [**Picasso**](https://github.com/square/picasso) - A powerful image downloading and caching library for Android
 
 ### More coming soon...
 
 
 
-## List of Common Libraries & Components
+## List of All Libraries & Components
 
-Libraries and components used throughout the app (not specific to a sub-app) are as follows:
+All the libraries and components used throughout the app are as follows:
+
+#### General purpose
 
 - [**Dagger**](https://github.com/google/dagger) - A fast dependency injector for Android and Java
 - [**Data Binding**](https://developer.android.com/topic/libraries/data-binding/) - A support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically
@@ -60,11 +61,24 @@ Libraries and components used throughout the app (not specific to a sub-app) are
 - [**AndroidUtilCode**](https://github.com/Blankj/AndroidUtilCode) - A library that encapsulates the functions that are commonly used in Android development
 - [**RxJava**](https://github.com/ReactiveX/RxJava) - A library for composing asynchronous and event-based programs by using observable sequences
 - [**RxAndroid**](https://github.com/ReactiveX/RxAndroid) - Android specific bindings for [RxJava 2](http://github.com/ReactiveX/RxJava)
+- [**Retrofit**](https://github.com/square/retrofit) - Type-safe HTTP client for Android and Java by Square, Inc.
+- [**MMKV**](https://github.com/Tencent/MMKV) - An efficient, small mobile key-value storage framework developed by WeChat
 - [**StateSaver**](https://github.com/evernote/android-state) - A utility library for Android to save objects in a `Bundle` without any boilerplate
+
+#### User-interface related
+
+- [**FragNav**](https://github.com/ncapdevi/FragNav) - Android library for managing multiple stacks of fragments
 - [**BRVAH**](https://github.com/CymChad/BaseRecyclerViewAdapterHelper) - Powerful and flexible RecyclerAdapter
-- [**Android-SpinKit**](https://github.com/ybq/Android-SpinKit) - Android loading animations
 - [**Picasso**](https://github.com/square/picasso) - A powerful image downloading and caching library for Android
 - [**Picasso Transformations**](https://github.com/wasabeef/picasso-transformations) - An Android transformation library providing a variety of image transformations for [Picasso](https://github.com/square/picasso)
+- [**Android-SpinKit**](https://github.com/ybq/Android-SpinKit) - Android loading animations
+- [**MultiStateView**](https://github.com/Kennyc1012/MultiStateView) - Android View that displays different content based on its state
+- [**FlexboxLayout**](https://github.com/google/flexbox-layout) - A library project which brings the similar capabilities of [CSS Flexible Box Layout Module](https://www.w3.org/TR/css-flexbox-1) to Android
+
+#### Testing related
+
+- [**Barista**](https://github.com/SchibstedSpain/Barista) - A library built on top of [Espresso](https://developer.android.com/training/testing/espresso/), that provides a simple and discoverable API, removing most of the boilerplate and verbosity of common Espresso tasks
+- [**Mockito**](https://github.com/mockito/mockito) - Most popular mocking framework for Java
 
 
 
