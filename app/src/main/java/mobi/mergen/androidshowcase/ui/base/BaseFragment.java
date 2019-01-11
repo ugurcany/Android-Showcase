@@ -16,15 +16,12 @@
 
 package mobi.mergen.androidshowcase.ui.base;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.blankj.utilcode.util.LogUtils;
-
-import org.jetbrains.annotations.TestOnly;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -72,20 +69,6 @@ public abstract class BaseFragment<V extends ViewDataBinding, M extends BaseView
 
         getLifecycle().addObserver(viewModel);
         return binding.getRoot();
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        ViewModelFactory realViewModelFactory = viewModelFactory;
-        super.onAttach(context);
-        if (realViewModelFactory != null) {
-            this.viewModelFactory = realViewModelFactory;
-        }
-    }
-
-    @TestOnly
-    public void setViewModelFactory(ViewModelFactory viewModelFactory) {
-        this.viewModelFactory = viewModelFactory;
     }
 
     public V getBinding() {

@@ -20,29 +20,27 @@ import android.os.Bundle;
 
 import com.blankj.utilcode.util.FragmentUtils;
 
-import org.jetbrains.annotations.TestOnly;
-
 import androidx.annotation.Nullable;
 import mobi.mergen.androidshowcase.R;
 import mobi.mergen.androidshowcase.databinding.ActivityMovieSearchBinding;
 import mobi.mergen.androidshowcase.ui.act_moviesearch.frag.MovieSearchFragment;
-import mobi.mergen.androidshowcase.ui.base.BaseActivity;
+import mobi.mergen.androidshowcase.ui.base.TestableBaseActivity;
 import mobi.mergen.androidshowcase.viewmodel.ViewModelFactory;
 
-public class MovieSearchActivity extends BaseActivity<ActivityMovieSearchBinding> {
+public class MovieSearchActivity extends TestableBaseActivity<ActivityMovieSearchBinding> {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (savedInstanceState == null && !isTesting()) {
+        if (savedInstanceState == null && !isOnTesting()) {
             FragmentUtils.replace(getSupportFragmentManager(),
                     MovieSearchFragment.initialize(),
                     R.id.container_fragment);
         }
     }
 
-    @TestOnly
-    void loadFragmentWithViewModelFactory(ViewModelFactory viewModelFactory) {
+    @Override
+    public void loadFragmentWithViewModelFactory(ViewModelFactory viewModelFactory) {
         MovieSearchFragment fragment = MovieSearchFragment.initialize();
         fragment.setViewModelFactory(viewModelFactory);
 

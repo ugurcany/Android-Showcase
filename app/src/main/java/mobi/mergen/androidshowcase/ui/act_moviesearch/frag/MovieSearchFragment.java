@@ -34,10 +34,10 @@ import mobi.mergen.androidshowcase.common.Navigator;
 import mobi.mergen.androidshowcase.data.Movie;
 import mobi.mergen.androidshowcase.data.MovieResults;
 import mobi.mergen.androidshowcase.databinding.FragmentMovieSearchBinding;
-import mobi.mergen.androidshowcase.ui.base.BaseFragment;
+import mobi.mergen.androidshowcase.ui.base.TestableBaseFragment;
 
 public class MovieSearchFragment
-        extends BaseFragment<FragmentMovieSearchBinding, MovieSearchViewModel>
+        extends TestableBaseFragment<FragmentMovieSearchBinding, MovieSearchViewModel>
         implements SearchView.OnQueryTextListener, BaseQuickAdapter.OnItemClickListener {
 
     @State

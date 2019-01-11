@@ -54,5 +54,4 @@ public class MainActivityTest {
         BaristaRecyclerViewAssertions.assertRecyclerViewItemCount(
                 R.id.recyclerview, 3);
     }
-
 }

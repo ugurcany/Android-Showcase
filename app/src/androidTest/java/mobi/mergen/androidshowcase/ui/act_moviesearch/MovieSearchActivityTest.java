@@ -41,7 +41,7 @@ import mobi.mergen.androidshowcase.helper.ResourceUtil;
 import mobi.mergen.androidshowcase.helper.SearchViewInteractions;
 import mobi.mergen.androidshowcase.repository.movie.IMovieRepository;
 import mobi.mergen.androidshowcase.ui.act_moviesearch.frag.MovieSearchViewModel;
-import mobi.mergen.androidshowcase.ui.base.BaseActivity;
+import mobi.mergen.androidshowcase.ui.base.TestableBaseActivity;
 import mobi.mergen.androidshowcase.viewmodel.ViewModelFactory;
 
 @RunWith(AndroidJUnit4.class)
@@ -52,7 +52,7 @@ public class MovieSearchActivityTest {
     IMovieRepository movieRepository;
 
     @InjectMocks
-    MovieSearchViewModel movieSearchViewModel;
+    MovieSearchViewModel viewModel;
 
     @Mock
     ViewModelFactory viewModelFactory;
@@ -65,10 +65,10 @@ public class MovieSearchActivityTest {
         MockitoAnnotations.initMocks(this);
 
         Mockito.when(viewModelFactory.create(MovieSearchViewModel.class))
-                .thenReturn(movieSearchViewModel);
+                .thenReturn(viewModel);
 
         Intent intent = new Intent();
-        intent.putExtra(BaseActivity.IS_TESTING, true);
+        intent.putExtra(TestableBaseActivity.IS_ON_TESTING, true);
         rule.launchActivity(intent);
         rule.getActivityTestRule().getActivity().loadFragmentWithViewModelFactory(viewModelFactory);
     }
@@ -109,5 +109,4 @@ public class MovieSearchActivityTest {
 
         BaristaVisibilityAssertions.assertDisplayed(R.string.moviesearch_results_error);
     }
-
 }

@@ -32,12 +32,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import mobi.mergen.androidshowcase.R;
 import mobi.mergen.androidshowcase.common.Navigator;
 import mobi.mergen.androidshowcase.data.MainListItem;
+import mobi.mergen.androidshowcase.databinding.ActivityMainBinding;
 import mobi.mergen.androidshowcase.ui.act_fleximages.FlexImagesActivity;
 import mobi.mergen.androidshowcase.ui.act_moviesearch.MovieSearchActivity;
 import mobi.mergen.androidshowcase.ui.act_multicounter.MultiCounterActivity;
 import mobi.mergen.androidshowcase.ui.act_readme.ReadmeActivity;
 import mobi.mergen.androidshowcase.ui.base.BaseActivity;
-import mobi.mergen.androidshowcase.databinding.ActivityMainBinding;
 
 public class MainActivity extends BaseActivity<ActivityMainBinding>
         implements BaseQuickAdapter.OnItemClickListener {
