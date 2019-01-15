@@ -27,7 +27,7 @@ sdk_versions.compile_sdk = 28
 ext.sdk_versions = sdk_versions
 
 def dep_versions = [:]
-dep_versions.gradle = "3.2.1"
+dep_versions.gradle = '3.3.0'
 dep_versions.kotlin = "1.3.11"
 dep_versions.dagger = "2.19"
 dep_versions.retrofit = "2.5.0"
